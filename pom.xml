@@ -6,6 +6,17 @@
     <name>OrbisGIS Parents</name>
     <packaging>pom</packaging>
     <version>1</version>
+    <scm>
+        <connection>scm:git:https://github.com/irstv/orbisgis-parents.git</connection>
+        <developerConnection>scm:git:https://github.com/irstv/orbisgis-parents.git</developerConnection>
+        <url>git@github.com:irstv/orbisgis-parents.git</url>
+    </scm>
+    <licenses>
+        <license>
+            <name>GNU General Public License (GPLV3+)</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+        </license>
+    </licenses>
     
     <modules>
         <module>nexus</module>

@@ -15,9 +15,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:https://github.com/irstv/orbisgis-view-plugins.git</connection>
-        <developerConnection>scm:git:https://github.com/irstv/orbisgis-view-plugins.git</developerConnection>
-        <url>git@github.com:irstv/orbisgis-view-plugins.git</url>
+        <connection>scm:git:https://github.com/irstv/orbisgis-parents.git</connection>
+        <developerConnection>scm:git:https://github.com/irstv/orbisgis-parents.git</developerConnection>
+        <url>git@github.com:irstv/orbisgis-parents.git</url>
     </scm>
     <parent>
         <groupId>org.sonatype.oss</groupId>
