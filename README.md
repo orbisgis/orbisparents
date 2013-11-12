@@ -1,4 +1,4 @@
 orbisgis-parents
 ================
 
-Parent pom for Maven. Facilitates deployments.
+Parent Maven pom. Facilitates deployments.
