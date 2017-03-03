@@ -15,9 +15,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:https://github.com/irstv/orbisgis-view-plugins.git</connection>
-        <developerConnection>scm:git:https://github.com/irstv/orbisgis-view-plugins.git</developerConnection>
-        <url>git@github.com:irstv/orbisgis-view-plugins.git</url>
+        <connection>scm:git:https://github.com/orbisgis/orbisgis-official-plugins.git</connection>
+        <developerConnection>scm:git:https://github.com/orbisgis/orbisgis-official-plugins.git</developerConnection>
+        <url>git@github.com:orbisgis/orbisgis-official-plugins.git</url>
     </scm>
     <developers>
         <developer>
