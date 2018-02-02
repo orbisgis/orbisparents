@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.orbisgis</groupId>
     <artifactId>orbisgis-nexus</artifactId>
-    <version>5.1.0-SNAPSHOT</version>
+    <version>5.1.0</version>
     <packaging>pom</packaging>
     <name>OrbisGIS Nexus Parent</name>
     <description>nexus.orbisgis.org repository</description>
