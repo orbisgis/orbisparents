@@ -15,12 +15,12 @@
             <id>orbisgis-deploy</id>
             <distributionManagement>
                 <snapshotRepository>
-                    <id>nexus-orbisgis-snapshots</id>
+                    <id>orbisgis-deploy-snapshots</id>
                     <name>Internal Snaphots</name>
                     <url>https://nexus-ng.orbisgis.org/repository/orbisgis-snapshot/</url>
                 </snapshotRepository>
                 <repository>
-                    <id>nexus-orbisgis-release</id>
+                    <id>orbisgis-deploy-release</id>
                     <name>Internal Releases</name>
                     <url>https://nexus-ng.orbisgis.org/repository/orbisgis-release/</url>
                 </repository>
