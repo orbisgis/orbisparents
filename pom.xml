@@ -9,7 +9,7 @@
     
     <modules>
         <module>nexus</module>
-        <module>nexus-ng</module>
+        <module>orbisparent</module>
     </modules>
 
 </project>
