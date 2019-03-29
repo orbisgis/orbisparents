@@ -1,14 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <!-- Maven Coordinates -->
     <groupId>org.orbisgis</groupId>
     <artifactId>orbisparent</artifactId>
-    <version>1.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+
+    <!-- Project Information -->
     <name>OrbisGIS Parent</name>
-    <description>nexus orbisgis.org repository</description>
-    <url>http://www.orbisgis.org</url>
+    <description>Parent pom for the dependency and plugin management and for the nexus deployment</description>
+
+    <organization>
+        <name>CNRS</name>
+        <url>http://www.orbisgis.org</url>
+    </organization>
+    <url>http://github.com/orbisgis/orbisgis-parents</url>
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License (LGPLV3+)</name>
+            <url>http://www.gnu.org/licenses/lgpl-3.0.html</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Erwan Bocher</name>
+            <organization>CNRS, Lab-STICC UMR 6285</organization>
+        </developer>
+        <developer>
+            <name>Sylvain Palominos</name>
+            <organization>UBS, Lab-STICC UMR 6285</organization>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/orbisgis/orbisgis-parents.git</connection>
+        <developerConnection>scm:git:https://github.com/orbisgis/orbisgis-parents.git</developerConnection>
+        <url>git@github.com:orbisgis/orbisgis-parents.git</url>
+    </scm>
+
+    <!-- Properties -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- Dependencies -->
+    <repositories>
+        <!-- To remove -->
+        <repository>
+            <id>osgi-maven</id>
+            <url>http://nexus.orbisgis.org/content/repositories/osgi-maven-snapshot</url>
+        </repository>
+        <!-- To remove -->
+        <repository>
+            <id>osgi-maven-5.1</id>
+            <url>http://nexus.orbisgis.org/content/repositories/osgi-maven-5.1</url>
+        </repository>
+        <!-- To remove -->
+        <repository>
+            <id>osgi-maven-5.1-snapshot</id>
+            <url>http://nexus.orbisgis.org/content/repositories/osgi-maven-5.1-snapshot</url>
+        </repository>
+        <repository>
+            <id>orbisgis-release</id>
+            <url>https://nexus-ng.orbisgis.org/repository/orbisgis-release</url>
+        </repository>
+        <repository>
+            <id>orbisgis-snapshot</id>
+            <url>https://nexus-ng.orbisgis.org/repository/orbisgis-snapshot</url>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy</artifactId>
+                <version>2.5.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-sql</artifactId>
+                <version>2.5.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-templates</artifactId>
+                <version>2.5.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis</groupId>
+                <artifactId>h2gis</artifactId>
+                <version>1.5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis</groupId>
+                <artifactId>h2gis-utilities</artifactId>
+                <version>1.5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>5.3.1</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>5.3.1</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.service.jdbc</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis</groupId>
+                <artifactId>postgis-jts</artifactId>
+                <version>1.5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis</groupId>
+                <artifactId>postgis-jts-osgi</artifactId>
+                <version>1.5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.locationtech.jts</groupId>
+                <artifactId>jts-core</artifactId>
+                <version>1.15.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.25</version>
+            </dependency>
+            <!-- Test dependencies -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>1.2.3</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.2.3</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+
+    <!-- Build Settings -->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.gmaven</groupId>
+                    <artifactId>gmaven-plugin</artifactId>
+                    <version>1.5</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.codehaus.gmaven.runtime</groupId>
+                            <artifactId>gmaven-runtime-2.0</artifactId>
+                            <version>1.5</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.groovy</groupId>
+                            <artifactId>groovy</artifactId>
+                            <version>2.5.6</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <debug>false</debug>
+                        <verbose>true</verbose>
+                        <stacktrace>true</stacktrace>
+                        <defaultScriptExtension>.groovy</defaultScriptExtension>
+                        <providerSelection>2.0</providerSelection>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>testCompile</goal>
+                                <goal>compile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- Compilation -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.0</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+                <!-- Test -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.1</version>
+                    <configuration>
+                        <useSystemClassLoader>false</useSystemClassLoader>
+                    </configuration>
+                </plugin>
+                <!-- Generation of the OSGI bundle -->
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>4.1.0</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <instructions>
+                            <Bundle-Vendor>Lab-STICC - CNRS UMR 6285</Bundle-Vendor>
+                        </instructions>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
     <profiles>
         <profile>
@@ -38,32 +268,6 @@
                     <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
                 </repository>
             </distributionManagement>
-        </profile>
-        <profile>
-            <id>release-sign-artifacts</id>
-            <activation>
-                <property>
-                    <name>performRelease</name>
-                    <value>true</value>
-                </property>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
     </profiles>
 </project>
