@@ -224,6 +224,47 @@
                         </instructions>
                     </configuration>
                 </plugin>
+                <!-- Tool version check -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>3.0.0-M2</version>
+                    <executions>
+                        <execution>
+                            <id>enforce-versions</id>
+                            <goals>
+                                <goal>enforce</goal>
+                            </goals>
+                            <configuration>
+                                <rules>
+                                    <bannedPlugins>
+                                        <!-- will only display a warning but does not fail the build. -->
+                                        <level>WARN</level>
+                                        <excludes>
+                                            <exclude>org.apache.maven.plugins:maven-verifier-plugin</exclude>
+                                        </excludes>
+                                        <message>Please consider using the maven-invoker-plugin (http://maven.apache.org/plugins/maven-invoker-plugin/)!</message>
+                                    </bannedPlugins>
+                                    <requireMavenVersion>
+                                        <version>3.5.0</version>
+                                    </requireMavenVersion>
+                                    <requireJavaVersion>
+                                        <version>1.8</version>
+                                    </requireJavaVersion>
+                                </rules>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- Versions check -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>2.7</version>
+                    <configuration>
+                        <rulesUri>file:///${project.basedir}/maven-version-rules.xml</rulesUri>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -236,6 +277,16 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
