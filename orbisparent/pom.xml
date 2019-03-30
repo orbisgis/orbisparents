@@ -300,10 +300,6 @@
                             <version>3.0.0</version>
                         </dependency>
                     </dependencies>
-                    <configuration>
-                        <attach>true</attach>
-                        <locales>en_US</locales>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
