@@ -354,4 +354,11 @@
             </plugin>
         </plugins>
     </reporting>
+    <distributionManagement>
+        <site>
+            <id>orbisgis-devs-website</id>
+            <name>Devs Website</name>
+            <url>dav:https://devs.orbisgis.org/orbisparent/</url>
+        </site>
+    </distributionManagement>
 </project>
