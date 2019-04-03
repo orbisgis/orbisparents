@@ -7,7 +7,7 @@
     <!-- Maven Coordinates -->
     <groupId>org.orbisgis</groupId>
     <artifactId>orbisparent</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <!-- Project Information -->
@@ -264,7 +264,7 @@
                                         <message>Please consider using the maven-invoker-plugin (http://maven.apache.org/plugins/maven-invoker-plugin/)!</message>
                                     </bannedPlugins>
                                     <requireMavenVersion>
-                                        <version>3.5.0</version>
+                                        <version>3.3.0</version>
                                     </requireMavenVersion>
                                     <requireJavaVersion>
                                         <version>1.8</version>
