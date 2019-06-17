@@ -49,6 +49,9 @@
         <maven.compiler.target>8</maven.compiler.target>
         <maven.compiler.source>8</maven.compiler.source>
         <site.basedir>${project.basedir}</site.basedir>
+        <groovy-version>2.5.7</groovy-version>
+        <orbisdata-version>1.0-SNAPSHOT</orbisdata-version>
+        <h2gis-version>2.0.0-SNAPSHOT</h2gis-version>
     </properties>
 
     <!-- Dependencies -->
@@ -115,17 +118,17 @@
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy</artifactId>
-                <version>2.5.6</version>
+                <version>${groovy-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy-sql</artifactId>
-                <version>2.5.6</version>
+                <version>${groovy-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy-templates</artifactId>
-                <version>2.5.6</version>
+                <version>${groovy-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
@@ -206,17 +209,42 @@
             <dependency>
                 <groupId>org.orbisgis</groupId>
                 <artifactId>h2gis</artifactId>
-                <version>1.5.0</version>
+                <version>${h2gis-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.orbisgis</groupId>
                 <artifactId>h2gis-utilities</artifactId>
-                <version>1.5.0</version>
+                <version>${h2gis-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.orbisgis</groupId>
                 <artifactId>postgis-jts-osgi</artifactId>
                 <version>1.5.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis</groupId>
+                <artifactId>data-manager-api</artifactId>
+                <version>${orbisdata-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis</groupId>
+                <artifactId>data-manager</artifactId>
+                <version>${orbisdata-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis</groupId>
+                <artifactId>process-manager-api</artifactId>
+                <version>${orbisdata-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis</groupId>
+                <artifactId>process-manager</artifactId>
+                <version>${orbisdata-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis</groupId>
+                <artifactId>commons</artifactId>
+                <version>${orbisdata-version}</version>
             </dependency>
 
             <!-- Test dependencies -->
