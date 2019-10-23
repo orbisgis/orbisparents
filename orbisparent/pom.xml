@@ -7,7 +7,7 @@
     <!-- Maven Coordinates -->
     <groupId>org.orbisgis</groupId>
     <artifactId>orbisparent</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.3</version>
     <packaging>pom</packaging>
 
     <!-- Project Information -->
@@ -49,9 +49,12 @@
         <maven.compiler.target>8</maven.compiler.target>
         <maven.compiler.source>8</maven.compiler.source>
         <site.basedir>${project.basedir}</site.basedir>
+
+        <!-- versions -->
         <groovy-version>2.5.7</groovy-version>
-        <orbisdata-version>1.0.0-SNAPSHOT</orbisdata-version>
-        <h2gis-version>2.0.0-SNAPSHOT</h2gis-version>
+        <h2-version>1.4.200</h2-version>
+        <h2gis-version>2.0.0</h2gis-version>
+        <orbisdata-version>1.0.0</orbisdata-version>
     </properties>
 
     <!-- Dependencies -->
@@ -108,7 +111,7 @@
             <dependency>
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
-                <version>1.4.200</version>
+                <version>${h2-version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
@@ -390,7 +393,7 @@
                         <dependency>
                             <groupId>org.apache.maven.wagon</groupId>
                             <artifactId>wagon-webdav-jackrabbit</artifactId>
-                            <version>3.0.0</version>
+                            <version>3.3.3</version>
                         </dependency>
                     </dependencies>
                 </plugin>
