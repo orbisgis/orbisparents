@@ -50,7 +50,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <site.basedir>${project.basedir}</site.basedir>
 
-        <maven-version>3.3.0</maven-version>
+        <maven-version>3.5.0</maven-version>
         <java-version>1.8</java-version>
 
         <!-- Dependencies versions -->
