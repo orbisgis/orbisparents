@@ -7,7 +7,7 @@
     <!-- Maven Coordinates -->
     <groupId>org.orbisgis</groupId>
     <artifactId>orbisparent</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <!-- Project Information -->
@@ -50,30 +50,53 @@
         <maven.compiler.source>8</maven.compiler.source>
         <site.basedir>${project.basedir}</site.basedir>
 
-        <!-- versions -->
+        <maven-version>3.3.0</maven-version>
+        <java-version>1.8</java-version>
+
+        <!-- Dependencies versions -->
+        <common-compress-version>1.19</common-compress-version>
+        <common-io-version>2.6</common-io-version>
+        <cts-version>1.5.3</cts-version>
         <groovy-version>2.5.7</groovy-version>
-        <h2-version>1.4.200</h2-version>
+        <h2-version>1.4.201-RC1</h2-version>
         <h2gis-version>2.0.0</h2gis-version>
+        <jackson-core-version>2.10.0</jackson-core-version>
+        <java-network-analyzer-version>0.1.7</java-network-analyzer-version>
+        <jts-version>1.16.1</jts-version>
+        <junit-version>5.5.0-M1</junit-version>
         <orbisdata-version>1.0.0</orbisdata-version>
+        <osgi-compendium-version>5.0.0</osgi-compendium-version>
+        <osgi-core-version>6.0.0</osgi-core-version>
+        <osgi-enterprise-version>5.0.0</osgi-enterprise-version>
+        <osgi-service-jdbc-version>1.0.0</osgi-service-jdbc-version>
+        <poly2tri-version>0.1.2</poly2tri-version>
+        <postgis-jdbc-version>2.3.0</postgis-jdbc-version>
+        <postgis-jts-version>1.5.0</postgis-jts-version>
+        <slf4j-version>1.7.26</slf4j-version>
+        <wagon-webdav-jackrabbit-version>3.3.3</wagon-webdav-jackrabbit-version>
+
+        <!-- Plugins versions -->
+        <exec-maven-version>1.6.0</exec-maven-version>
+        <gmaven-version>1.6.2</gmaven-version>
+        <jacoco-maven-version>0.8.3</jacoco-maven-version>
+        <maven-assembly-version>3.1.1</maven-assembly-version>
+        <maven-bundle-version>4.1.0</maven-bundle-version>
+        <maven-clean-version>3.1.0</maven-clean-version>
+        <maven-compiler-version>3.8.0</maven-compiler-version>
+        <maven-deploy-version>3.0.0-M1</maven-deploy-version>
+        <maven-enforcer-version>3.0.0-M2</maven-enforcer-version>
+        <maven-install-version>3.0.0-M1</maven-install-version>
+        <maven-jar-version>3.1.1</maven-jar-version>
+        <maven-javadoc-version>3.1.0</maven-javadoc-version>
+        <maven-maven-project-info-reports-version>3.0.0</maven-maven-project-info-reports-version>
+        <maven-resources-version>2.5</maven-resources-version>
+        <maven-site-version>3.7.1</maven-site-version>
+        <maven-surefire-version>3.0.0-M3</maven-surefire-version>
+        <version-maven>2.7</version-maven>
     </properties>
 
     <!-- Dependencies -->
     <repositories>
-        <!-- To remove -->
-        <repository>
-            <id>osgi-maven</id>
-            <url>http://nexus.orbisgis.org/content/repositories/osgi-maven-snapshot</url>
-        </repository>
-        <!-- To remove -->
-        <repository>
-            <id>osgi-maven-5.1</id>
-            <url>http://nexus.orbisgis.org/content/repositories/osgi-maven-5.1</url>
-        </repository>
-        <!-- To remove -->
-        <repository>
-            <id>osgi-maven-5.1-snapshot</id>
-            <url>http://nexus.orbisgis.org/content/repositories/osgi-maven-5.1-snapshot</url>
-        </repository>
         <repository>
             <id>orbisgis-release</id>
             <url>http://nexus-ng.orbisgis.org/repository/orbisgis-release</url>
@@ -101,12 +124,12 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-compress</artifactId>
-                <version>1.19</version>
+                <version>${common-compress-version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>2.6</version>
+                <version>${common-io-version}</version>
             </dependency>
             <dependency>
                 <groupId>com.h2database</groupId>
@@ -116,7 +139,7 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
-                <version>2.10.0</version>
+                <version>${jackson-core-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
@@ -141,78 +164,78 @@
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
-                <version>5.5.0-M1</version>
+                <version>${junit-version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-engine</artifactId>
-                <version>5.5.0-M1</version>
+                <version>${junit-version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.locationtech.jts</groupId>
                 <artifactId>jts-core</artifactId>
-                <version>1.16.1</version>
+                <version>${jts-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>1.7.26</version>
+                <version>${slf4j-version}</version>
             </dependency>
             <dependency>
                 <groupId>net.postgis</groupId>
                 <artifactId>postgis-jdbc</artifactId>
-                <version>2.3.0</version>
+                <version>${postgis-jdbc-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.compendium</artifactId>
-                <version>5.0.0</version>
+                <version>${osgi-compendium-version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.core</artifactId>
-                <version>6.0.0</version>
+                <version>${osgi-core-version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.enterprise</artifactId>
-                <version>5.0.0</version>
+                <version>${osgi-enterprise-version}</version>
                 <scope>provided</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.orbisgis</groupId>
                 <artifactId>poly2tri-core</artifactId>
-                <version>0.1.2</version>
+                <version>${poly2tri-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.orbisgis</groupId>
                 <artifactId>poly2tri</artifactId>
-                <version>0.1.2</version>
+                <version>${poly2tri-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.orbisgis</groupId>
                 <artifactId>java-network-analyzer</artifactId>
-                <version>0.1.7</version>
+                <version>${java-network-analyzer-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.orbisgis</groupId>
                 <artifactId>cts</artifactId>
-                <version>1.5.3-SNAPSHOT</version>
+                <version>${cts-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.service.jdbc</artifactId>
-                <version>1.0.0</version>
+                <version>${osgi-service-jdbc-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.orbisgis</groupId>
                 <artifactId>postgis-jts</artifactId>
-                <version>1.5.0</version>
+                <version>${postgis-jts-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.orbisgis</groupId>
@@ -260,13 +283,11 @@
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
-                <version>1.7.26</version>
+                <version>${slf4j-version}</version>
             </dependency>
 
         </dependencies>
     </dependencyManagement>
-
-
 
     <!-- Build Settings -->
     <build>
@@ -276,15 +297,15 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>${maven-clean-version}</version>
                 </plugin>
                 <!-- Groovy -->
                 <plugin>
                     <groupId>org.codehaus.gmavenplus</groupId>
                     <artifactId>gmavenplus-plugin</artifactId>
-                    <version>1.6.2</version>
+                    <version>${gmaven-version}</version>
                     <configuration>
-                        <targetBytecode>1.8</targetBytecode>
+                        <targetBytecode>${maven.compiler.target}</targetBytecode>
                     </configuration>
                     <executions>
                         <execution>
@@ -299,17 +320,17 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.0</version>
+                    <version>${maven-compiler-version}</version>
                     <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
                     </configuration>
                 </plugin>
                 <!-- Test -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.0.0-M3</version>
+                    <version>${maven-surefire-version}</version>
                     <configuration>
                         <useSystemClassLoader>false</useSystemClassLoader>
                     </configuration>
@@ -317,13 +338,13 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-report-plugin</artifactId>
-                    <version>3.0.0-M3</version>
+                    <version>${maven-surefire-version}</version>
                 </plugin>
                 <!-- Generation of the OSGI bundle -->
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>4.1.0</version>
+                    <version>${maven-bundle-version}</version>
                     <extensions>true</extensions>
                     <configuration>
                         <instructions>
@@ -335,19 +356,19 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>3.0.0-M1</version>
+                    <version>${maven-deploy-version}</version>
                 </plugin>
                 <!-- Install -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>3.0.0-M1</version>
+                    <version>${maven-install-version}</version>
                 </plugin>
                 <!-- Tool version check -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>3.0.0-M2</version>
+                    <version>${maven-enforcer-version}</version>
                     <executions>
                         <execution>
                             <id>enforce-versions</id>
@@ -365,10 +386,10 @@
                                         <message>Please consider using the maven-invoker-plugin (http://maven.apache.org/plugins/maven-invoker-plugin/)!</message>
                                     </bannedPlugins>
                                     <requireMavenVersion>
-                                        <version>3.3.0</version>
+                                        <version>${maven-version}</version>
                                     </requireMavenVersion>
                                     <requireJavaVersion>
-                                        <version>1.8</version>
+                                        <version>${java-version}</version>
                                     </requireJavaVersion>
                                 </rules>
                             </configuration>
@@ -379,7 +400,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>versions-maven-plugin</artifactId>
-                    <version>2.7</version>
+                    <version>${version-maven}</version>
                     <configuration>
                         <rulesUri>https://raw.githubusercontent.com/orbisgis/orbisgis-parents/master/orbisparent/maven-version-rules.xml</rulesUri>
                     </configuration>
@@ -388,25 +409,25 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.7.1</version>
+                    <version>${maven-site-version}</version>
                     <dependencies>
                         <dependency>
                             <groupId>org.apache.maven.wagon</groupId>
                             <artifactId>wagon-webdav-jackrabbit</artifactId>
-                            <version>3.3.3</version>
+                            <version>${wagon-webdav-jackrabbit-version}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>${maven-project-info-reports-version}</version>
                 </plugin>
                 <!-- Resources management -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>2.5</version>
+                    <version>${maven-resources-version}</version>
                     <executions>
                         <execution>
                             <id>copy-sitedescriptor</id>
@@ -432,7 +453,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.3</version>
+                    <version>${jacoco-maven-version}</version>
                     <executions>
                         <execution>
                             <goals>
@@ -452,25 +473,25 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>${maven-javadoc-version}</version>
                 </plugin>
                 <!-- Execution -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
-                    <version>1.6.0</version>
+                    <version>${exec-maven-version}</version>
                 </plugin>
                 <!-- Assemble the project with dependencies -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <version>3.1.1</version>
+                    <version>${maven-assembly-version}</version>
                 </plugin>
                 <!-- Package the project into a JAR file -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.1.1</version>
+                    <version>${maven-jar-version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -560,7 +581,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.0</version>
                 <configuration>
                     <show>public</show>
                 </configuration>
