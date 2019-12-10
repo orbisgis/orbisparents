@@ -4,4 +4,4 @@ jdk:
   - oraclejdk8
   - openjdk8
 
-script: mvn clean install versions:display-plugin-updates versions:display-dependency-updates
+script: mvn clean versions:display-plugin-updates versions:display-dependency-updates site site:attach-descriptor site:deploy source:jar install
