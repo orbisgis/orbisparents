@@ -7,7 +7,7 @@
     <!-- Maven Coordinates -->
     <groupId>org.orbisgis</groupId>
     <artifactId>orbisparent</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <!-- Project Information -->
@@ -58,8 +58,7 @@
         <common-io-version>2.6</common-io-version>
         <cts-version>1.5.3</cts-version>
         <groovy-version>2.5.7</groovy-version>
-        <jackson-core-version>2.10.0</jackson-core-version>
-        <h2-version>1.4.200</h2-version>
+        <h2-version>1.4.201-RC1</h2-version>
         <h2gis-version>2.0.0</h2gis-version>
         <jackson-core-version>2.10.0</jackson-core-version>
         <java-network-analyzer-version>0.1.7</java-network-analyzer-version>
