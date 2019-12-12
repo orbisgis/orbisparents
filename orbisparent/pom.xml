@@ -60,10 +60,10 @@
         <groovy-version>3.0.0-rc-2</groovy-version>
         <h2-version>1.4.201-RC1</h2-version>
         <h2gis-version>2.0.0-SNAPSHOT</h2gis-version>
-        <jackson-core-version>2.10.0</jackson-core-version>
+        <jackson-core-version>2.10.1</jackson-core-version>
         <java-network-analyzer-version>0.1.7</java-network-analyzer-version>
         <jts-version>1.16.1</jts-version>
-        <junit-version>5.5.0-M1</junit-version>
+        <junit-version>5.6.0-M1</junit-version>
         <orbisdata-version>1.0.0</orbisdata-version>
         <osgi-compendium-version>5.0.0</osgi-compendium-version>
         <osgi-core-version>6.0.0</osgi-core-version>
@@ -72,26 +72,27 @@
         <poly2tri-version>0.1.2</poly2tri-version>
         <postgis-jdbc-version>2.3.0</postgis-jdbc-version>
         <postgis-jts-version>${h2gis-version}</postgis-jts-version>
-        <slf4j-version>1.7.26</slf4j-version>
-        <wagon-webdav-jackrabbit-version>3.3.3</wagon-webdav-jackrabbit-version>
+        <slf4j-version>1.7.29</slf4j-version>
+        <wagon-webdav-jackrabbit-version>3.3.4</wagon-webdav-jackrabbit-version>
 
         <!-- Plugins versions -->
         <exec-maven-version>1.6.0</exec-maven-version>
-        <gmaven-version>1.6.2</gmaven-version>
-        <jacoco-maven-version>0.8.3</jacoco-maven-version>
-        <maven-assembly-version>3.1.1</maven-assembly-version>
-        <maven-bundle-version>4.1.0</maven-bundle-version>
+        <gmaven-version>1.8.1</gmaven-version>
+        <jacoco-maven-version>0.8.5</jacoco-maven-version>
+        <maven-assembly-version>3.2.0</maven-assembly-version>
+        <maven-bundle-version>4.2.1</maven-bundle-version>
         <maven-clean-version>3.1.0</maven-clean-version>
-        <maven-compiler-version>3.8.0</maven-compiler-version>
+        <maven-compiler-version>3.8.1</maven-compiler-version>
         <maven-deploy-version>3.0.0-M1</maven-deploy-version>
-        <maven-enforcer-version>3.0.0-M2</maven-enforcer-version>
+        <maven-enforcer-version>3.0.0-M3</maven-enforcer-version>
         <maven-install-version>3.0.0-M1</maven-install-version>
-        <maven-jar-version>3.1.1</maven-jar-version>
-        <maven-javadoc-version>3.1.0</maven-javadoc-version>
+        <maven-jar-version>3.2.0</maven-jar-version>
+        <maven-javadoc-version>3.1.1</maven-javadoc-version>
         <maven-project-info-reports-version>3.0.0</maven-project-info-reports-version>
-        <maven-resources-version>2.5</maven-resources-version>
-        <maven-site-version>3.7.1</maven-site-version>
-        <maven-surefire-version>3.0.0-M3</maven-surefire-version>
+        <maven-resources-version>3.1.0</maven-resources-version>
+        <maven-site-version>3.8.2</maven-site-version>
+        <maven-surefire-report-plugin-version>3.0.0-M4</maven-surefire-report-plugin-version>
+        <maven-surefire-version>3.0.0-M4</maven-surefire-version>
         <version-maven>2.7</version-maven>
     </properties>
 
@@ -338,7 +339,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-report-plugin</artifactId>
-                    <version>${maven-surefire-version}</version>
+                    <version>${maven-surefire-report-plugin-version}</version>
                 </plugin>
                 <!-- Generation of the OSGI bundle -->
                 <plugin>
