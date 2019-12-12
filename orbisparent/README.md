@@ -13,7 +13,7 @@ site site:deploy`
 
 ### Versions
 
-The version number should follow this pattern : `Major`.`Minor`.`Revision``[-Qualifier]`
+The version number should follow this pattern : `Major`.`Minor`.`Revision[-Qualifier]`
 
  - `Revision` is changed after each dependency/plugin/information update/addition.
  - `Minor` is changed after each dependency/plugin/information removal or replacement.
