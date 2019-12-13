@@ -70,6 +70,7 @@
         <osgi-core-version>6.0.0</osgi-core-version>
         <osgi-enterprise-version>5.0.0</osgi-enterprise-version>
         <osgi-service-jdbc-version>1.0.0</osgi-service-jdbc-version>
+        <osm-version>1.0.0-SNAPSHOT</osm-version>
         <poly2tri-version>0.1.2</poly2tri-version>
         <postgis-jdbc-version>2.3.0</postgis-jdbc-version>
         <postgis-jts-version>${h2gis-version}</postgis-jts-version>
@@ -290,6 +291,16 @@
                 <groupId>org.orbisgis.orbisdata</groupId>
                 <artifactId>commons</artifactId>
                 <version>${orbisdata-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis</groupId>
+                <artifactId>osm</artifactId>
+                <version>${osm-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis</groupId>
+                <artifactId>osmnoise</artifactId>
+                <version>${osm-version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.haifengl</groupId>
