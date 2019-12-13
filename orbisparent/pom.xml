@@ -64,16 +64,20 @@
         <java-network-analyzer-version>0.1.7</java-network-analyzer-version>
         <jts-version>1.16.1</jts-version>
         <junit-version>5.6.0-M1</junit-version>
-        <orbisdata-version>1.0.0</orbisdata-version>
+        <orbisanalysis-version>1.0.0-SNAPSHOT</orbisanalysis-version>
+        <orbisdata-version>1.0.1-SNAPSHOT</orbisdata-version>
         <osgi-compendium-version>5.0.0</osgi-compendium-version>
         <osgi-core-version>6.0.0</osgi-core-version>
         <osgi-enterprise-version>5.0.0</osgi-enterprise-version>
         <osgi-service-jdbc-version>1.0.0</osgi-service-jdbc-version>
+        <osm-version>1.0.0-SNAPSHOT</osm-version>
         <poly2tri-version>0.1.2</poly2tri-version>
         <postgis-jdbc-version>2.3.0</postgis-jdbc-version>
         <postgis-jts-version>${h2gis-version}</postgis-jts-version>
         <slf4j-version>1.7.29</slf4j-version>
+        <smile-version>2.0.0</smile-version>
         <wagon-webdav-jackrabbit-version>3.3.4</wagon-webdav-jackrabbit-version>
+        <xstream-version>1.4.11.1</xstream-version>
 
         <!-- Plugins versions -->
         <exec-maven-version>1.6.0</exec-maven-version>
@@ -255,28 +259,63 @@
             </dependency>
             <dependency>
                 <groupId>org.orbisgis</groupId>
-                <artifactId>data-manager-api</artifactId>
+                <artifactId>h2gis-network</artifactId>
+                <version>${h2gis-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis.orbisdata.datamanager</groupId>
+                <artifactId>api</artifactId>
                 <version>${orbisdata-version}</version>
             </dependency>
             <dependency>
-                <groupId>org.orbisgis</groupId>
-                <artifactId>data-manager</artifactId>
+                <groupId>org.orbisgis.orbisdata.datamanager</groupId>
+                <artifactId>jdbc</artifactId>
                 <version>${orbisdata-version}</version>
             </dependency>
             <dependency>
-                <groupId>org.orbisgis</groupId>
-                <artifactId>process-manager-api</artifactId>
+                <groupId>org.orbisgis.orbisdata.datamanager</groupId>
+                <artifactId>dataframe</artifactId>
                 <version>${orbisdata-version}</version>
             </dependency>
             <dependency>
-                <groupId>org.orbisgis</groupId>
-                <artifactId>process-manager</artifactId>
+                <groupId>org.orbisgis.orbisdata.processmanager</groupId>
+                <artifactId>api</artifactId>
                 <version>${orbisdata-version}</version>
             </dependency>
             <dependency>
-                <groupId>org.orbisgis</groupId>
+                <groupId>org.orbisgis.orbisdata.processmanager</groupId>
+                <artifactId>process</artifactId>
+                <version>${orbisdata-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis.orbisdata</groupId>
                 <artifactId>commons</artifactId>
                 <version>${orbisdata-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis</groupId>
+                <artifactId>osm</artifactId>
+                <version>${osm-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.orbisgis</groupId>
+                <artifactId>osmnoise</artifactId>
+                <version>${osm-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.haifengl</groupId>
+                <artifactId>smile-core</artifactId>
+                <version>${smile-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.haifengl</groupId>
+                <artifactId>smile-data</artifactId>
+                <version>${smile-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <version>${xstream-version}</version>
             </dependency>
 
             <!-- Test dependencies -->
