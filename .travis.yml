@@ -3,5 +3,7 @@ language: java
 jdk:
   - oraclejdk8
   - openjdk8
+  - oraclejdk11
+  - openjdk11
 
 script: mvn clean versions:display-plugin-updates versions:display-dependency-updates install

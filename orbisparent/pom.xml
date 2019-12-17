@@ -418,12 +418,11 @@
                             <configuration>
                                 <rules>
                                     <bannedPlugins>
-                                        <!-- will only display a warning but does not fail the build. -->
+                                        <!-- Will only display a warning but does not fail the build. -->
                                         <level>WARN</level>
                                         <excludes>
                                             <exclude>org.apache.maven.plugins:maven-verifier-plugin</exclude>
                                         </excludes>
-                                        <message>Please consider using the maven-invoker-plugin (http://maven.apache.org/plugins/maven-invoker-plugin/)!</message>
                                     </bannedPlugins>
                                     <requireMavenVersion>
                                         <version>${maven-version}</version>
@@ -509,7 +508,7 @@
                         </execution>
                     </executions>
                 </plugin>
-                <!-- javadoc -->
+                <!-- Javadoc generation -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
