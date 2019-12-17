@@ -10,6 +10,7 @@
     
     <modules>
         <module>orbisparent</module>
+        <module>project-archetype</module>
     </modules>
 
 </project>

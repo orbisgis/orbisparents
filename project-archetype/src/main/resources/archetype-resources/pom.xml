@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Maven Coordinates -->
+    <parent>
+        <groupId>org.orbisgis</groupId>
+        <artifactId>orbisparent</artifactId>
+        <version>1.0.3-SNAPSHOT</version>
+    </parent>
+    <groupId>${groupId}</groupId>
+    <artifactId>${artifactId}</artifactId>
+    <version>${version}</version>
+    <packaging>bundle</packaging>
+
+    <!-- Project Information -->
+    <name><!-- TODO : Name --></name>
+    <description><!-- TODO : Description --></description>
+
+    <!-- Dependencies -->
+    <repositories>
+        <repository>
+            <id>orbisgis-release</id>
+            <url>http://nexus-ng.orbisgis.org/repository/orbisgis-release</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>orbisgis-snapshot</id>
+            <url>http://nexus-ng.orbisgis.org/repository/orbisgis-snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
+</project>
