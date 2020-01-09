@@ -11,6 +11,7 @@
     <modules>
         <module>orbisparent</module>
         <module>project-archetype</module>
+        <module>commons</module>
     </modules>
 
 </project>

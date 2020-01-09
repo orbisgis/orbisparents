@@ -11,7 +11,6 @@
         <version>1.0.3-SNAPSHOT</version>
         <relativePath>../orbisparent</relativePath>
     </parent>
-    <groupId>org.orbisgis.orbisparents</groupId>
     <artifactId>project-archetype</artifactId>
     <version>1.0.3-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
