@@ -15,7 +15,7 @@
  *
  * Commons is distributed under LGPL 3 license.
  *
- * Copyright (C) 2018-2019 CNRS (Lab-STICC UMR CNRS 6285)
+ * Copyright (C) 2018-2020 CNRS (Lab-STICC UMR CNRS 6285)
  *
  *
  * Commons is free software: you can redistribute it and/or modify it under the
@@ -34,9 +34,11 @@
  * or contact directly:
  * info_at_ orbisgis.org
  */
-package org.orbisgis.orbisdata.commons.printer;
+package org.orbisgis.commons.printer;
 
-import org.orbisgis.orbisdata.commons.annotations.NotNull;
+import org.orbisgis.commons.annotations.NotNull;
+
+import static org.orbisgis.commons.utilities.CheckUtils.checkNotNull;
 
 /**
  * Root implementation of {@link ICustomPrinter} for the custom printers.
@@ -74,6 +76,7 @@ public abstract class CustomPrinter implements ICustomPrinter {
      * @param builder {@link StringBuilder} used for the string building.
      */
     protected CustomPrinter(@NotNull StringBuilder builder) {
+        checkNotNull(builder, "The builder should not be null.");
         this.builder = builder;
     }
 
@@ -101,6 +104,7 @@ public abstract class CustomPrinter implements ICustomPrinter {
 
     @Override
     public void appendTableValue(@NotNull Object value) {
+        checkNotNull(value, "The value to append should not be null.");
         appendTableValue(value, ICustomPrinter.CellPosition.LEFT);
     }
 }

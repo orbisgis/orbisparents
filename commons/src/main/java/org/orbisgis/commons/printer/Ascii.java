@@ -15,7 +15,7 @@
  *
  * Commons is distributed under LGPL 3 license.
  *
- * Copyright (C) 2018-2019 CNRS (Lab-STICC UMR CNRS 6285)
+ * Copyright (C) 2018-2020 CNRS (Lab-STICC UMR CNRS 6285)
  *
  *
  * Commons is free software: you can redistribute it and/or modify it under the
@@ -34,9 +34,11 @@
  * or contact directly:
  * info_at_ orbisgis.org
  */
-package org.orbisgis.orbisdata.commons.printer;
+package org.orbisgis.commons.printer;
 
-import org.orbisgis.orbisdata.commons.annotations.NotNull;
+import org.orbisgis.commons.annotations.NotNull;
+
+import static org.orbisgis.commons.utilities.CheckUtils.checkNotNull;
 
 /**
  * Extension of {@link CustomPrinter} for the printing of data in an Ascii style.
@@ -74,6 +76,8 @@ public class Ascii extends CustomPrinter {
 
     @Override
     public void appendTableValue(@NotNull Object value, @NotNull ICustomPrinter.CellPosition position) {
+        checkNotNull(value, "The value to append should not be null.");
+        checkNotNull(position, "The position of the value should not be null.");
         if (isDrawingTable) {
             builder.append("|");
             String cut = value.toString();
@@ -93,8 +97,8 @@ public class Ascii extends CustomPrinter {
                     }
                     builder.append(cut);
                     break;
-                default:
                 case CENTER:
+                default:
                     for (int i = 0; i < (columnWidth - cut.length()) / 2; i++) {
                         builder.append(" ");
                     }
@@ -115,11 +119,14 @@ public class Ascii extends CustomPrinter {
 
     @Override
     public void appendTableHeaderValue(@NotNull Object value, @NotNull ICustomPrinter.CellPosition position) {
+        checkNotNull(value, "The value to append should not be null.");
+        checkNotNull(position, "The position of the value should not be null.");
         this.appendTableValue(value, position);
     }
 
     @Override
-    public void appendTableTitle(@NotNull Object value) {
+    public void appendTableTitle(@NotNull Object title) {
+        checkNotNull(title, "The title to append should not be null.");
         if (isDrawingTable) {
             builder.append("+");
             for (int j = 0; j < columnWidth; j++) {
@@ -129,7 +136,7 @@ public class Ascii extends CustomPrinter {
             builder.append("\n");
 
             builder.append("|");
-            String cut = value.toString();
+            String cut = title.toString();
             if (cut.length() > columnWidth) {
                 cut = cut.substring(0, columnWidth - 3) + "...";
             }

@@ -15,7 +15,7 @@
  *
  * Commons is distributed under LGPL 3 license.
  *
- * Copyright (C) 2018-2019 CNRS (Lab-STICC UMR CNRS 6285)
+ * Copyright (C) 2019-2020 CNRS (Lab-STICC UMR CNRS 6285)
  *
  *
  * Commons is free software: you can redistribute it and/or modify it under the
@@ -34,17 +34,39 @@
  * or contact directly:
  * info_at_ orbisgis.org
  */
-package org.orbisgis.orbisdata.commons.annotations;
+package org.orbisgis.commons.utilities;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Target;
+import org.junit.jupiter.api.Test;
+
+import java.security.InvalidParameterException;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
- * Indicates a nullable parameter or methods return.
+ * Test class dedicated to {@link CheckUtils} class.
  *
  * @author Erwan Bocher (CNRS)
- * @author Sylvain Palominos (Lab-STICC UBS 2019)
+ * @author Sylvain PALOMINOS (Lab-STICC UBS 2020)
  */
-@Target({ElementType.FIELD, ElementType.PARAMETER, ElementType.METHOD})
-public @interface Nullable {
+public class CheckUtilsTest {
+
+    /**
+     * Test the {@link CheckUtils#checkNotNull(Object)} and {@link CheckUtils#checkNotNull(Object, String)} methods.
+     */
+    @Test
+    void checkNotNullTest() {
+        Object nullObj = null;
+        Object notNullObj = "notNull";
+        String nullMessage = null;
+        String notNullMessage = "message";
+
+        assertThrows(InvalidParameterException.class, () -> CheckUtils.checkNotNull(null));
+        assertThrows(InvalidParameterException.class, () -> CheckUtils.checkNotNull(null, nullMessage));
+        assertThrows(InvalidParameterException.class, () -> CheckUtils.checkNotNull(null, notNullMessage));
+
+        assertDoesNotThrow(() -> CheckUtils.checkNotNull(notNullObj));
+        assertDoesNotThrow(() -> CheckUtils.checkNotNull(notNullObj, nullMessage));
+        assertDoesNotThrow(() -> CheckUtils.checkNotNull(notNullObj, notNullMessage));
+    }
 }

@@ -15,7 +15,7 @@
  *
  * Commons is distributed under LGPL 3 license.
  *
- * Copyright (C) 2018-2019 CNRS (Lab-STICC UMR CNRS 6285)
+ * Copyright (C) 2018-2020 CNRS (Lab-STICC UMR CNRS 6285)
  *
  *
  * Commons is free software: you can redistribute it and/or modify it under the
@@ -34,9 +34,11 @@
  * or contact directly:
  * info_at_ orbisgis.org
  */
-package org.orbisgis.orbisdata.commons.printer;
+package org.orbisgis.commons.printer;
 
-import org.orbisgis.orbisdata.commons.annotations.NotNull;
+import org.orbisgis.commons.annotations.NotNull;
+
+import static org.orbisgis.commons.utilities.CheckUtils.checkNotNull;
 
 /**
  * Extension of {@link CustomPrinter} for the printing of data in an Html style.
@@ -76,14 +78,20 @@ public class Html extends CustomPrinter {
 
     @Override
     public void appendTableValue(@NotNull Object value, @NotNull CellPosition position) {
+        checkNotNull(value, "The value to append should not be null.");
+        checkNotNull(position, "The position of the value should not be null.");
         if (isDrawingTable) {
             if (columnIndex == 0) {
                 builder.append("<tr>\n");
             }
+            String cut = value.toString();
+            if (cut.length() > columnWidth) {
+                cut = cut.substring(0, columnWidth - 3) + "...";
+            }
             builder.append("<td align=\"");
             builder.append(position);
             builder.append("\">");
-            builder.append(value);
+            builder.append(cut);
             builder.append("</td>");
             builder.append("\n");
             columnIndex++;
@@ -96,14 +104,20 @@ public class Html extends CustomPrinter {
 
     @Override
     public void appendTableHeaderValue(@NotNull Object value, @NotNull CellPosition position) {
+        checkNotNull(value, "The value to append should not be null.");
+        checkNotNull(position, "The position of the value should not be null.");
         if (isDrawingTable) {
             if (columnIndex == 0) {
                 builder.append("<tr>\n");
             }
+            String cut = value.toString();
+            if (cut.length() > columnWidth) {
+                cut = cut.substring(0, columnWidth - 3) + "...";
+            }
             builder.append("<th align=\"");
             builder.append(position);
             builder.append("\">");
-            builder.append(value);
+            builder.append(cut);
             builder.append("</th>");
             builder.append("\n");
             columnIndex++;
@@ -116,9 +130,14 @@ public class Html extends CustomPrinter {
 
     @Override
     public void appendTableTitle(@NotNull Object title) {
+        checkNotNull(title, "The title to append should not be null.");
         if (isDrawingTable) {
+            String cut = title.toString();
+            if (cut.length() > columnWidth) {
+                cut = cut.substring(0, columnWidth - 3) + "...";
+            }
             builder.append("<caption>");
-            builder.append(title);
+            builder.append(cut);
             builder.append("</caption>\n");
         }
     }

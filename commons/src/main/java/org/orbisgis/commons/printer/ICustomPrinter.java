@@ -15,7 +15,7 @@
  *
  * Commons is distributed under LGPL 3 license.
  *
- * Copyright (C) 2018-2019 CNRS (Lab-STICC UMR CNRS 6285)
+ * Copyright (C) 2018-2020 CNRS (Lab-STICC UMR CNRS 6285)
  *
  *
  * Commons is free software: you can redistribute it and/or modify it under the
@@ -34,9 +34,9 @@
  * or contact directly:
  * info_at_ orbisgis.org
  */
-package org.orbisgis.orbisdata.commons.printer;
+package org.orbisgis.commons.printer;
 
-import org.orbisgis.orbisdata.commons.annotations.NotNull;
+import org.orbisgis.commons.annotations.NotNull;
 
 /**
  * Interface used for the customisation of the printing of Java Objects.
