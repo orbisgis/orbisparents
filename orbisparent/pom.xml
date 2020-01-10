@@ -273,6 +273,11 @@
                 <version>${h2gis-version}</version>
             </dependency>
             <dependency>
+                <groupId>org.orbisgis</groupId>
+                <artifactId>commons</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.orbisgis.orbisdata.datamanager</groupId>
                 <artifactId>api</artifactId>
                 <version>${orbisdata-version}</version>
@@ -459,7 +464,9 @@
                     <artifactId>versions-maven-plugin</artifactId>
                     <version>${version-maven}</version>
                     <configuration>
-                        <rulesUri>https://raw.githubusercontent.com/orbisgis/orbisgis-parents/master/orbisparent/maven-version-rules.xml</rulesUri>
+                        <rulesUri>
+                            https://raw.githubusercontent.com/orbisgis/orbisgis-parents/master/orbisparent/maven-version-rules.xml
+                        </rulesUri>
                     </configuration>
                 </plugin>
                 <!-- Reporting -->

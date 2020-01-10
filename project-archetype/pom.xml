@@ -11,14 +11,14 @@
         <version>1.0.3-SNAPSHOT</version>
         <relativePath>../orbisparent</relativePath>
     </parent>
-    <groupId>org.orbisgis.orbisparents</groupId>
     <artifactId>project-archetype</artifactId>
     <version>1.0.3-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <!-- Project Information -->
     <name>OrbisGIS project Archetype</name>
-    <description>Basic Maven archetype for the creation of a simple project able to integrate the OrbisGIS platform.</description>
+    <description>Basic Maven archetype for the creation of a simple project able to integrate the OrbisGIS platform.
+    </description>
 
     <!-- Dependencies -->
     <repositories>
