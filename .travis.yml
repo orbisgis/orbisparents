@@ -6,4 +6,9 @@ jdk:
   - oraclejdk11
   - openjdk11
 
+env:
+  global:
+    - CODECOV_TOKEN="98b0d01b-ca50-4e48-b8a7-e14f3914245b"
 script: mvn clean versions:display-plugin-updates versions:display-dependency-updates install
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
