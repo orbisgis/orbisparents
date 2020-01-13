@@ -303,7 +303,7 @@
                 <version>${orbisdata-version}</version>
             </dependency>
             <dependency>
-                <groupId>org.orbisgis.orbisdata</groupId>
+                <groupId>org.orbisdata</groupId>
                 <artifactId>commons</artifactId>
                 <version>${orbisdata-version}</version>
             </dependency>
