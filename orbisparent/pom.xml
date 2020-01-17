@@ -308,12 +308,12 @@
                 <version>${orbisdata-version}</version>
             </dependency>
             <dependency>
-                <groupId>org.orbisgis</groupId>
+                <groupId>org.orbisgis.orbisanalysis</groupId>
                 <artifactId>osm</artifactId>
                 <version>${osm-version}</version>
             </dependency>
             <dependency>
-                <groupId>org.orbisgis</groupId>
+                <groupId>org.orbisgis.orbisanalysis</groupId>
                 <artifactId>osmnoise</artifactId>
                 <version>${osm-version}</version>
             </dependency>
