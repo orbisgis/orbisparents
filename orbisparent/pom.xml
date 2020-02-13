@@ -57,7 +57,7 @@
         <common-compress-version>1.19</common-compress-version>
         <common-io-version>2.6</common-io-version>
         <cts-version>1.5.3-SNAPSHOT</cts-version>
-        <groovy-version>3.0.0-rc-2</groovy-version>
+        <groovy-version>3.0.0</groovy-version>
         <h2-version>1.4.201-RC2</h2-version>
         <h2gis-version>2.0.0-SNAPSHOT</h2gis-version>
         <jackson-core-version>2.10.1</jackson-core-version>
