@@ -8,11 +8,11 @@
     <parent>
         <groupId>org.orbisgis</groupId>
         <artifactId>orbisparent</artifactId>
-        <version>1.0.3-SNAPSHOT</version>
+        <version>1.0.3-RC1</version>
         <relativePath>../orbisparent</relativePath>
     </parent>
     <artifactId>commons</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.3-RC1</version>
     <packaging>bundle</packaging>
 
     <!-- Project Information -->
