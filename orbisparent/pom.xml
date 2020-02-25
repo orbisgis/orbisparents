@@ -7,7 +7,7 @@
     <!-- Maven Coordinates -->
     <groupId>org.orbisgis</groupId>
     <artifactId>orbisparent</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.3-RC1</version>
     <packaging>pom</packaging>
 
     <!-- Project Information -->
@@ -54,28 +54,28 @@
         <java-version>1.8</java-version>
 
         <!-- Dependencies versions -->
-        <common-compress-version>1.19</common-compress-version>
+        <common-compress-version>1.20</common-compress-version>
         <common-io-version>2.6</common-io-version>
-        <cts-version>1.5.3-SNAPSHOT</cts-version>
-        <groovy-version>3.0.0</groovy-version>
+        <cts-version>1.5.3</cts-version>
+        <groovy-version>3.0.1</groovy-version>
         <h2-version>1.4.201-RC2</h2-version>
-        <h2gis-version>2.0.0-SNAPSHOT</h2gis-version>
-        <jackson-core-version>2.10.1</jackson-core-version>
+        <h2gis-version>2.0.0-RC1</h2gis-version>
+        <jackson-core-version>2.10.2</jackson-core-version>
         <java-network-analyzer-version>0.1.7</java-network-analyzer-version>
         <jts-version>1.16.1</jts-version>
-        <junit-version>5.6.0-M1</junit-version>
-        <orbisanalysis-version>1.0.0-SNAPSHOT</orbisanalysis-version>
-        <orbisdata-version>1.0.1-SNAPSHOT</orbisdata-version>
+        <junit-version>5.6.0</junit-version>
+        <orbisanalysis-version>1.0.0-RC1</orbisanalysis-version>
+        <orbisdata-version>1.0.1-RC1</orbisdata-version>
         <osgi-compendium-version>5.0.0</osgi-compendium-version>
         <osgi-core-version>6.0.0</osgi-core-version>
         <osgi-enterprise-version>5.0.0</osgi-enterprise-version>
         <osgi-service-jdbc-version>1.0.0</osgi-service-jdbc-version>
-        <osm-version>1.0.0-SNAPSHOT</osm-version>
+        <osm-version>1.0.0-RC1</osm-version>
         <poly2tri-version>0.1.2</poly2tri-version>
         <postgis-jdbc-version>2.3.0</postgis-jdbc-version>
         <postgis-jts-version>${h2gis-version}</postgis-jts-version>
-        <slf4j-version>1.7.29</slf4j-version>
-        <smile-version>2.0.0</smile-version>
+        <slf4j-version>1.7.20</slf4j-version>
+        <smile-version>2.1.1</smile-version>
         <wagon-webdav-jackrabbit-version>3.3.4</wagon-webdav-jackrabbit-version>
         <xstream-version>1.4.11.1</xstream-version>
 
