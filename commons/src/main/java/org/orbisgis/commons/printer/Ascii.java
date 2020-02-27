@@ -84,6 +84,7 @@ public class Ascii extends CustomPrinter {
             if (cut.length() > columnWidth) {
                 cut = cut.substring(0, columnWidth - 3) + "...";
             }
+
             switch (position) {
                 case LEFT:
                     builder.append(cut);

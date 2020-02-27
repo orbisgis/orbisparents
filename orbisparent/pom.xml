@@ -57,7 +57,7 @@
         <commons-version>1.0.3-SNAPSHOT</commons-version>
         <commons-compress-version>1.20</commons-compress-version>
         <commons-io-version>2.6</commons-io-version>
-        <cts-version>1.5.3</cts-version>
+        <cts-version>1.6.0-SNAPSHOT</cts-version>
         <groovy-version>3.0.1</groovy-version>
         <h2-version>1.4.201-RC2</h2-version>
         <h2gis-version>2.0.0-SNAPSHOT</h2gis-version>
@@ -83,7 +83,7 @@
         <!-- Plugins versions -->
         <exec-maven-version>1.6.0</exec-maven-version>
         <gmaven-version>1.8.1</gmaven-version>
-        <jacoco-maven-version>0.8.5</jacoco-maven-version>
+        <jacoco-maven-version>0.8.6-SNAPSHOT</jacoco-maven-version>
         <maven-archetype-plugin-version>3.1.2</maven-archetype-plugin-version>
         <maven-assembly-version>3.2.0</maven-assembly-version>
         <maven-bundle-version>4.2.1</maven-bundle-version>
@@ -128,6 +128,16 @@
             </releases>
         </repository>
     </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>oss-sonatype</id>
+            <name>oss-sonatype</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
     <dependencyManagement>
         <dependencies>
