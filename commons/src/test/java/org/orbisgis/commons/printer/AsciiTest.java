@@ -125,7 +125,6 @@ class AsciiTest {
         assertThrows(InvalidParameterException.class,
                 () -> ascii.appendTableValue(null));
 
-        switch (CENTER) {}
         ascii.appendTableValue("center", CENTER);
         ascii.appendTableValue("left", LEFT);
         ascii.appendTableValue("right", RIGHT);
