@@ -44,7 +44,7 @@ import static org.orbisgis.commons.utilities.CheckUtils.checkNotNull;
  * Root implementation of {@link ICustomPrinter} for the custom printers.
  *
  * @author Erwan Bocher (CNRS)
- * @author Sylvain PALOMINOS (UBS 2019)
+ * @author Sylvain PALOMINOS (UBS 2019-2020)
  */
 public abstract class CustomPrinter implements ICustomPrinter {
 
