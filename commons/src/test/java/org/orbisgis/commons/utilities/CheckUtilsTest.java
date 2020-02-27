@@ -56,6 +56,8 @@ public class CheckUtilsTest {
      */
     @Test
     void checkNotNullTest() {
+        CheckUtils checkUtils = new CheckUtils();
+
         Object nullObj = null;
         Object notNullObj = "notNull";
         String nullMessage = null;
