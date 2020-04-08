@@ -53,7 +53,6 @@ public class Ascii extends CustomPrinter {
      *
      * @param builder Not null {@link StringBuilder} used for building the string.
      */
-    @Deprecated
     public Ascii(@NotNull StringBuilder builder) {
         super(builder);
         if (this.builder.length() != 0) {
