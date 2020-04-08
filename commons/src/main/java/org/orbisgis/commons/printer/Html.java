@@ -53,8 +53,19 @@ public class Html extends CustomPrinter {
      *
      * @param builder Not null {@link StringBuilder} used for building the string.
      */
+    @Deprecated
     public Html(@NotNull StringBuilder builder) {
         super(builder);
+    }
+
+    /**
+     * Main constructor.
+     */
+    public Html() {
+        super(new StringBuilder());
+        if (this.builder.length() != 0) {
+            builder.append("\n");
+        }
     }
 
     @Override
