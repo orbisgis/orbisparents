@@ -49,12 +49,22 @@ import static org.orbisgis.commons.utilities.CheckUtils.checkNotNull;
 public class Ascii extends CustomPrinter {
 
     /**
-     * Main constructor.
+     * Constructor.
      *
      * @param builder Not null {@link StringBuilder} used for building the string.
      */
     public Ascii(@NotNull StringBuilder builder) {
         super(builder);
+        if (this.builder.length() != 0) {
+            builder.append("\n");
+        }
+    }
+
+    /**
+     * Main constructor.
+     */
+    public Ascii() {
+        super(new StringBuilder());
         if (this.builder.length() != 0) {
             builder.append("\n");
         }

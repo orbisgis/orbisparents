@@ -78,8 +78,7 @@ class AsciiTest {
      */
     @Test
     void startEndTableTest() {
-        StringBuilder sb = new StringBuilder();
-        Ascii ascii = new Ascii(sb);
+        Ascii ascii = new Ascii();
         ascii.appendTableLineSeparator();
         assertEquals("", ascii.toString());
 
@@ -99,8 +98,7 @@ class AsciiTest {
      */
     @Test
     void appendTableLineSeparatorTest() {
-        StringBuilder sb = new StringBuilder();
-        Ascii ascii = new Ascii(sb);
+        Ascii ascii = new Ascii();
         ascii.appendTableLineSeparator();
         assertEquals("", ascii.toString());
 
@@ -115,8 +113,7 @@ class AsciiTest {
      */
     @Test
     void appendTableValueTest() {
-        StringBuilder sb = new StringBuilder();
-        Ascii ascii = new Ascii(sb);
+        Ascii ascii = new Ascii();
 
         assertThrows(InvalidParameterException.class,
                 () -> ascii.appendTableValue("null", null));
@@ -155,8 +152,7 @@ class AsciiTest {
      */
     @Test
     void appendTableHeaderValueTest() {
-        StringBuilder sb = new StringBuilder();
-        Ascii ascii = new Ascii(sb);
+        Ascii ascii = new Ascii();
 
         assertThrows(InvalidParameterException.class,
                 () -> ascii.appendTableHeaderValue("null", null));
@@ -183,8 +179,7 @@ class AsciiTest {
      */
     @Test
     void appendTableTitleTest() {
-        StringBuilder sb = new StringBuilder();
-        Ascii ascii = new Ascii(sb);
+        Ascii ascii = new Ascii();
 
         assertThrows(InvalidParameterException.class,
                 () -> ascii.appendTableTitle(null));

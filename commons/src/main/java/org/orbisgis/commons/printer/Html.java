@@ -57,6 +57,16 @@ public class Html extends CustomPrinter {
         super(builder);
     }
 
+    /**
+     * Main constructor.
+     */
+    public Html() {
+        super(new StringBuilder());
+        if (this.builder.length() != 0) {
+            builder.append("\n");
+        }
+    }
+
     @Override
     public void appendTableLineSeparator() {
         if (isDrawingTable) {

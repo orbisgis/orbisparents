@@ -78,8 +78,7 @@ class HtmlTest {
      */
     @Test
     void startEndTableTest() {
-        StringBuilder sb = new StringBuilder();
-        Html html = new Html(sb);
+        Html html = new Html();
         html.appendTableLineSeparator();
         assertEquals("", html.toString());
 
@@ -104,8 +103,7 @@ class HtmlTest {
      */
     @Test
     void appendTableLineSeparatorTest() {
-        StringBuilder sb = new StringBuilder();
-        Html html = new Html(sb);
+        Html html = new Html();
         html.appendTableLineSeparator();
         assertEquals("", html.toString());
         html.startTable(2, 2);
@@ -120,8 +118,7 @@ class HtmlTest {
      */
     @Test
     void appendTableValueTest() {
-        StringBuilder sb = new StringBuilder();
-        Html html = new Html(sb);
+        Html html = new Html();
 
         assertThrows(InvalidParameterException.class,
                 () -> html.appendTableValue("null", null));
@@ -181,8 +178,7 @@ class HtmlTest {
      */
     @Test
     void appendTableHeaderValueTest() {
-        StringBuilder sb = new StringBuilder();
-        Html html = new Html(sb);
+        Html html = new Html();
 
         assertThrows(InvalidParameterException.class,
                 () -> html.appendTableHeaderValue("null", null));
@@ -219,8 +215,7 @@ class HtmlTest {
      */
     @Test
     void appendTableTitleTest() {
-        StringBuilder sb = new StringBuilder();
-        Html html = new Html(sb);
+        Html html = new Html();
 
         assertThrows(InvalidParameterException.class,
                 () -> html.appendTableTitle(null));
