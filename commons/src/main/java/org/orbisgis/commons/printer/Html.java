@@ -62,9 +62,6 @@ public class Html extends CustomPrinter {
      */
     public Html() {
         super(new StringBuilder());
-        if (this.builder.length() != 0) {
-            builder.append("\n");
-        }
     }
 
     @Override
@@ -149,6 +146,17 @@ public class Html extends CustomPrinter {
             builder.append("<caption>");
             builder.append(cut);
             builder.append("</caption>\n");
+        }
+    }
+
+    @Override
+    public void appendValue(Object value) {
+        checkNotNull(value, "The value to append should not be null.");
+        if(isDrawingTable){
+            appendTableValue(value);
+        }
+        else{
+            builder.append("<p>").append(value).append("</p>\n");
         }
     }
 }

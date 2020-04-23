@@ -65,9 +65,6 @@ public class Ascii extends CustomPrinter {
      */
     public Ascii() {
         super(new StringBuilder());
-        if (this.builder.length() != 0) {
-            builder.append("\n");
-        }
     }
 
     @Override
@@ -160,6 +157,17 @@ public class Ascii extends CustomPrinter {
             }
             builder.append("|");
             builder.append("\n");
+        }
+    }
+
+    @Override
+    public void appendValue(Object value) {
+        checkNotNull(value, "The value to append should not be null.");
+        if(isDrawingTable){
+            appendTableValue(value);
+        }
+        else{
+            builder.append(value).append("\n");
         }
     }
 }

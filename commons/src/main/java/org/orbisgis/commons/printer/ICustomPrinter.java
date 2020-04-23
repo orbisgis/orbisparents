@@ -98,6 +98,13 @@ public interface ICustomPrinter {
     void appendTableTitle(@NotNull Object title);
 
     /**
+     * Add a simple value. If a table has been started, use {@link ICustomPrinter#appendTableValue(Object)}.
+     *
+     * @param value Value to add.
+     */
+    void appendValue(@NotNull Object value);
+
+    /**
      * Return the not null string representation of the data contained by the {@link ICustomPrinter} in its specific format.
      *
      * @return The not null string representation of the data contained by the {@link ICustomPrinter}
