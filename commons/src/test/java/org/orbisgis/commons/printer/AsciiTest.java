@@ -198,4 +198,22 @@ class AsciiTest {
                 "+----------+\n" +
                 "|too lon...|\n", ascii.toString());
     }
+
+    /**
+     * Test the {@link Ascii#appendValue(Object)} method.
+     */
+    @Test
+    void appendValueTest() {
+        Ascii ascii = new Ascii();
+
+        assertThrows(InvalidParameterException.class,
+                () -> ascii.appendValue(null));
+
+        ascii.appendValue("value");
+        assertEquals("value\n", ascii.toString());
+
+        ascii.startTable(10, 1);
+        ascii.appendValue("value");
+        assertEquals("value\n|value     |\n", ascii.toString());
+    }
 }

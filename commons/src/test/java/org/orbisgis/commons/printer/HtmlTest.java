@@ -233,4 +233,22 @@ class HtmlTest {
                 "<caption>title</caption>\n" +
                 "<caption>too lon...</caption>\n", html.toString());
     }
+
+    /**
+     * Test the {@link Html#appendValue(Object)} method.
+     */
+    @Test
+    void appendValueTest() {
+        Html html = new Html();
+
+        assertThrows(InvalidParameterException.class,
+                () -> html.appendValue(null));
+
+        html.appendValue("value");
+        assertEquals("<p>value</p>\n", html.toString());
+
+        html.startTable(10, 1);
+        html.appendValue("value");
+        assertEquals("<p>value</p>\n<table>\n<tr>\n<td align=\"LEFT\">value</td>\n</tr>\n", html.toString());
+    }
 }
