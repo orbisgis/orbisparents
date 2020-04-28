@@ -38,8 +38,6 @@ package org.orbisgis.commons.utilities;
 
 import org.junit.jupiter.api.Test;
 
-import java.security.InvalidParameterException;
-
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -56,16 +54,13 @@ public class CheckUtilsTest {
      */
     @Test
     void checkNotNullTest() {
-        CheckUtils checkUtils = new CheckUtils();
-
-        Object nullObj = null;
         Object notNullObj = "notNull";
         String nullMessage = null;
         String notNullMessage = "message";
 
-        assertThrows(InvalidParameterException.class, () -> CheckUtils.checkNotNull(null));
-        assertThrows(InvalidParameterException.class, () -> CheckUtils.checkNotNull(null, nullMessage));
-        assertThrows(InvalidParameterException.class, () -> CheckUtils.checkNotNull(null, notNullMessage));
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotNull(null));
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotNull(null, nullMessage));
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotNull(null, notNullMessage));
 
         assertDoesNotThrow(() -> CheckUtils.checkNotNull(notNullObj));
         assertDoesNotThrow(() -> CheckUtils.checkNotNull(notNullObj, nullMessage));

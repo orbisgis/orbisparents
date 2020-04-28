@@ -38,8 +38,6 @@ package org.orbisgis.commons.printer;
 
 import org.junit.jupiter.api.Test;
 
-import java.security.InvalidParameterException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.orbisgis.commons.printer.ICustomPrinter.CellPosition.*;
@@ -57,7 +55,7 @@ class AsciiTest {
      */
     @Test
     void buildTest() {
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> new Ascii(null));
 
         StringBuilder sb = new StringBuilder();
@@ -115,11 +113,11 @@ class AsciiTest {
     void appendTableValueTest() {
         Ascii ascii = new Ascii();
 
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> ascii.appendTableValue("null", null));
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> ascii.appendTableValue(null, CENTER));
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> ascii.appendTableValue(null));
 
         ascii.appendTableValue("center", CENTER);
@@ -154,9 +152,9 @@ class AsciiTest {
     void appendTableHeaderValueTest() {
         Ascii ascii = new Ascii();
 
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> ascii.appendTableHeaderValue("null", null));
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> ascii.appendTableHeaderValue(null, CENTER));
 
         ascii.appendTableHeaderValue("center", CENTER);
@@ -181,7 +179,7 @@ class AsciiTest {
     void appendTableTitleTest() {
         Ascii ascii = new Ascii();
 
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> ascii.appendTableTitle(null));
 
         ascii.appendTableTitle("title");
@@ -206,7 +204,7 @@ class AsciiTest {
     void appendValueTest() {
         Ascii ascii = new Ascii();
 
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> ascii.appendValue(null));
 
         ascii.appendValue("value");
