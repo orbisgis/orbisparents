@@ -38,8 +38,6 @@ package org.orbisgis.commons.printer;
 
 import org.junit.jupiter.api.Test;
 
-import java.security.InvalidParameterException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.orbisgis.commons.printer.ICustomPrinter.CellPosition.*;
@@ -57,7 +55,7 @@ class HtmlTest {
      */
     @Test
     void buildTest() {
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> new Html(null));
 
         StringBuilder sb = new StringBuilder();
@@ -120,11 +118,11 @@ class HtmlTest {
     void appendTableValueTest() {
         Html html = new Html();
 
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> html.appendTableValue("null", null));
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> html.appendTableValue(null, CENTER));
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> html.appendTableValue(null));
 
         html.appendTableValue("center", CENTER);
@@ -180,9 +178,9 @@ class HtmlTest {
     void appendTableHeaderValueTest() {
         Html html = new Html();
 
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> html.appendTableHeaderValue("null", null));
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> html.appendTableHeaderValue(null, CENTER));
 
         html.appendTableHeaderValue("center", CENTER);
@@ -217,7 +215,7 @@ class HtmlTest {
     void appendTableTitleTest() {
         Html html = new Html();
 
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> html.appendTableTitle(null));
 
         html.appendTableTitle("title");
@@ -241,7 +239,7 @@ class HtmlTest {
     void appendValueTest() {
         Html html = new Html();
 
-        assertThrows(InvalidParameterException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> html.appendValue(null));
 
         html.appendValue("value");

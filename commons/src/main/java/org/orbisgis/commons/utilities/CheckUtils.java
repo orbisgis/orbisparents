@@ -38,8 +38,6 @@ package org.orbisgis.commons.utilities;
 
 import org.orbisgis.commons.annotations.Nullable;
 
-import java.security.InvalidParameterException;
-
 /**
  * Utility class for checking values, parameters ...
  *
@@ -48,30 +46,30 @@ import java.security.InvalidParameterException;
 public class CheckUtils {
 
     /**
-     * Check that the given value is not null. If null, throws an {@link InvalidParameterException}.
+     * Check that the given value is not null. If null, throws an {@link IllegalArgumentException}.
      *
      * @param value Value to check.
-     * @throws InvalidParameterException Exception thrown in case of null value.
+     * @throws IllegalArgumentException Exception thrown in case of null value.
      */
-    public static void checkNotNull(@Nullable Object value) throws InvalidParameterException {
+    public static void checkNotNull(@Nullable Object value) throws IllegalArgumentException {
         if (value == null) {
-            throw new InvalidParameterException();
+            throw new IllegalArgumentException();
         }
     }
 
     /**
-     * Check that the given value is not null. If null, throws an {@link InvalidParameterException} with the given
+     * Check that the given value is not null. If null, throws an {@link IllegalArgumentException} with the given
      * message.
      *
      * @param value   Value to check.
-     * @param message Message to put in the {@link InvalidParameterException}.
-     * @throws InvalidParameterException Exception thrown in case of null value with the given message.
+     * @param message Message to put in the {@link IllegalArgumentException}.
+     * @throws IllegalArgumentException Exception thrown in case of null value with the given message.
      */
-    public static void checkNotNull(@Nullable Object value, @Nullable String message) throws InvalidParameterException {
+    public static void checkNotNull(@Nullable Object value, @Nullable String message) throws IllegalArgumentException {
         if (message == null) {
             checkNotNull(value);
         } else if (value == null) {
-            throw new InvalidParameterException(message);
+            throw new IllegalArgumentException(message);
         }
     }
 }
