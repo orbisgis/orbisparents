@@ -38,6 +38,8 @@ package org.orbisgis.commons.utilities;
 
 import org.orbisgis.commons.annotations.Nullable;
 
+import java.util.Collection;
+
 /**
  * Utility class for checking values, parameters ...
  *
@@ -69,6 +71,62 @@ public class CheckUtils {
         if (message == null) {
             checkNotNull(value);
         } else if (value == null) {
+            throw new IllegalArgumentException(message);
+        }
+    }
+
+    /**
+     * Check that the given {@link Collection} is not empty. If empty, throws an {@link IllegalArgumentException}.
+     *
+     * @param value {@link Collection} to check.
+     * @throws IllegalArgumentException Exception thrown in case of empty {@link Collection}.
+     */
+    public static void checkNotEmpty(@Nullable Collection<?> value) throws IllegalArgumentException {
+        if (value == null || value.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    /**
+     * Check that the given {@link Collection} is not empty. If empty, throws an {@link IllegalArgumentException} with the given
+     * message.
+     *
+     * @param value   {@link Collection} to check.
+     * @param message Message to put in the {@link IllegalArgumentException}.
+     * @throws IllegalArgumentException Exception thrown in case of empty {@link Collection} with the given message.
+     */
+    public static void checkNotEmpty(@Nullable Collection<?> value, @Nullable String message) throws IllegalArgumentException {
+        if (message == null) {
+            checkNotEmpty(value);
+        } else if (value == null || value.isEmpty()) {
+            throw new IllegalArgumentException(message);
+        }
+    }
+
+    /**
+     * Check that the given array is not empty. If empty, throws an {@link IllegalArgumentException}.
+     *
+     * @param array Array to check.
+     * @throws IllegalArgumentException Exception thrown in case of empty array.
+     */
+    public static void checkNotEmpty(@Nullable Object[] array) throws IllegalArgumentException {
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    /**
+     * Check that the given array is not empty. If empty, throws an {@link IllegalArgumentException} with the given
+     * message.
+     *
+     * @param array   Array to check.
+     * @param message Message to put in the {@link IllegalArgumentException}.
+     * @throws IllegalArgumentException Exception thrown in case of empty array with the given message.
+     */
+    public static void checkNotEmpty(@Nullable Object[] array, @Nullable String message) throws IllegalArgumentException {
+        if (message == null) {
+            checkNotEmpty(array);
+        } else if (array == null || array.length == 0) {
             throw new IllegalArgumentException(message);
         }
     }
