@@ -38,6 +38,10 @@ package org.orbisgis.commons.utilities;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -65,5 +69,39 @@ public class CheckUtilsTest {
         assertDoesNotThrow(() -> CheckUtils.checkNotNull(notNullObj));
         assertDoesNotThrow(() -> CheckUtils.checkNotNull(notNullObj, nullMessage));
         assertDoesNotThrow(() -> CheckUtils.checkNotNull(notNullObj, notNullMessage));
+    }
+
+    /**
+     * Test the {@link CheckUtils#checkNotEmpty(Object[], String)}, {@link CheckUtils#checkNotEmpty(Collection)},
+     * {@link CheckUtils#checkNotEmpty(Collection, String)}, {@link CheckUtils#checkNotEmpty(Object[])} methods.
+     */
+    @Test
+    void checkNotEmptyTest() {
+        Object[] notEmptyObj = {"notEmpty"};
+        Object[] emptyObj = {};
+        List<Object> notEmptyList = new ArrayList<>();
+        notEmptyList.add("notEmpty");
+        List<Object> emptyList = new ArrayList<>();
+        String message = "message";
+
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotEmpty((Collection<?>)null));
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotEmpty((Collection<?>)null, message));
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotEmpty((Collection<?>)null, null));
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotEmpty((Object[])null));
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotEmpty((Object[])null, message));
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotEmpty((Object[])null, null));
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotEmpty(emptyObj));
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotEmpty(emptyObj, message));
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotEmpty(emptyObj, null));
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotEmpty(emptyList));
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotEmpty(emptyList, message));
+        assertThrows(IllegalArgumentException.class, () -> CheckUtils.checkNotEmpty(emptyList, null));
+
+        assertDoesNotThrow(() -> CheckUtils.checkNotEmpty(notEmptyObj));
+        assertDoesNotThrow(() -> CheckUtils.checkNotEmpty(notEmptyObj, message));
+        assertDoesNotThrow(() -> CheckUtils.checkNotEmpty(notEmptyObj, null));
+        assertDoesNotThrow(() -> CheckUtils.checkNotEmpty(notEmptyList));
+        assertDoesNotThrow(() -> CheckUtils.checkNotEmpty(notEmptyList, message));
+        assertDoesNotThrow(() -> CheckUtils.checkNotEmpty(notEmptyList, null));
     }
 }
