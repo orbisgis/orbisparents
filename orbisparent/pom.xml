@@ -58,10 +58,10 @@
         <commons-compress-version>1.20</commons-compress-version>
         <commons-io-version>2.6</commons-io-version>
         <cts-version>1.6.0-SNAPSHOT</cts-version>
-        <groovy-version>3.0.1</groovy-version>
+        <groovy-version>3.0.4</groovy-version>
         <h2-version>1.4.201-RC2</h2-version>
         <h2gis-version>2.0.0-SNAPSHOT</h2gis-version>
-        <jackson-core-version>2.10.2</jackson-core-version>
+        <jackson-core-version>2.11.0</jackson-core-version>
         <java-network-analyzer-version>0.1.7</java-network-analyzer-version>
         <jts-version>1.16.1</jts-version>
         <junit-version>5.6.0</junit-version>
@@ -73,10 +73,10 @@
         <osgi-service-jdbc-version>1.0.0</osgi-service-jdbc-version>
         <osm-version>1.0.0-SNAPSHOT</osm-version>
         <poly2tri-version>0.1.2</poly2tri-version>
-        <postgis-jdbc-version>2.3.0</postgis-jdbc-version>
+        <postgis-jdbc-version>2.5.0</postgis-jdbc-version>
         <postgis-jts-version>${h2gis-version}</postgis-jts-version>
         <slf4j-version>1.7.20</slf4j-version>
-        <smile-version>2.1.1</smile-version>
+        <smile-version>2.4.0</smile-version>
         <wagon-webdav-jackrabbit-version>3.3.4</wagon-webdav-jackrabbit-version>
         <xstream-version>1.4.11.1</xstream-version>
 
