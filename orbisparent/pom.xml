@@ -336,11 +336,10 @@
                 <artifactId>smile-core</artifactId>
                 <version>${smile-version}</version>
                 <exclusions>
-                  <exclusion>
-                  <groupId>com.github.haifeng</groupId>
-                  <artifactId>smile-netlib</artifactId>
-                  <version>${smile-version}</version>
-                  </exclusion>
+                    <exclusion>
+                    <groupId>com.github.haifeng</groupId>
+                    <artifactId>smile-netlib</artifactId>
+                    </exclusion>
                 </exclusions>
             </dependency>
             <dependency>
