@@ -76,7 +76,7 @@
         <postgis-jdbc-version>2.5.0</postgis-jdbc-version>
         <postgis-jts-version>${h2gis-version}</postgis-jts-version>
         <slf4j-version>1.7.30</slf4j-version>
-        <smile-version>2.4.0</smile-version>
+        <smile-version>2.5.0</smile-version>
         <wagon-webdav-jackrabbit-version>3.3.4</wagon-webdav-jackrabbit-version>
         <xstream-version>1.4.11.1</xstream-version>
 
