@@ -62,7 +62,7 @@
         <h2-version>1.4.201-RC2</h2-version>
         <h2gis-version>2.0.0-SNAPSHOT</h2gis-version>
         <jackson-core-version>2.11.0</jackson-core-version>
-        <java-network-analyzer-version>0.1.7</java-network-analyzer-version>
+        <java-network-analyzer-version>0.1.8-SNAPSHOT</java-network-analyzer-version>
         <jts-version>1.16.1</jts-version>
         <junit-version>5.7.0-M1</junit-version>
         <orbisanalysis-version>1.0.0-SNAPSHOT</orbisanalysis-version>
