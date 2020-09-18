@@ -83,7 +83,7 @@
         <!-- Plugins versions -->
         <exec-maven-version>3.0.0</exec-maven-version>
         <gmaven-version>1.9.0</gmaven-version>
-        <jacoco-maven-version>0.8.6-SNAPSHOT</jacoco-maven-version>
+        <jacoco-maven-version>0.8.6</jacoco-maven-version>
         <maven-archetype-plugin-version>3.1.2</maven-archetype-plugin-version>
         <maven-assembly-version>3.3.0</maven-assembly-version>
         <maven-bundle-version>4.2.1</maven-bundle-version>
