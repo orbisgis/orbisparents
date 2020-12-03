@@ -72,6 +72,7 @@
         <osgi-enterprise-version>5.0.0</osgi-enterprise-version>
         <osgi-service-jdbc-version>1.0.0</osgi-service-jdbc-version>
         <osm-version>1.0.0-SNAPSHOT</osm-version>
+        <picocli-version>4.5.2</picocli-version>
         <poly2tri-version>0.1.2</poly2tri-version>
         <postgis-jdbc-version>2.5.0</postgis-jdbc-version>
         <postgis-jts-version>${h2gis-version}</postgis-jts-version>
@@ -83,7 +84,7 @@
         <!-- Plugins versions -->
         <exec-maven-version>3.0.0</exec-maven-version>
         <gmaven-version>1.9.0</gmaven-version>
-        <jacoco-maven-version>0.8.6-SNAPSHOT</jacoco-maven-version>
+        <jacoco-maven-version>0.8.6</jacoco-maven-version>
         <maven-archetype-plugin-version>3.1.2</maven-archetype-plugin-version>
         <maven-assembly-version>3.3.0</maven-assembly-version>
         <maven-bundle-version>4.2.1</maven-bundle-version>
@@ -168,6 +169,11 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
                 <version>${jackson-core-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.picocli</groupId>
+                <artifactId>picocli</artifactId>
+                <version>${picocli-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
