@@ -15,6 +15,12 @@
     <version>${parent.version}</version>
     <packaging>maven-archetype</packaging>
 
+    <scm>
+        <connection>scm:git:https://github.com/SPalominos/orbisparents.git</connection>
+        <developerConnection>scm:git:https://github.com/SPalominos/orbisparents.git</developerConnection>
+        <url>git@github.com:SPalominos/orbisparents.git</url>
+    </scm>
+
     <!-- Project Information -->
     <name>OrbisGIS project Archetype</name>
     <description>Basic Maven archetype for the creation of a simple project able to integrate the OrbisGIS platform.
