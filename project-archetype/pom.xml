@@ -12,7 +12,7 @@
         <relativePath>../orbisparent</relativePath>
     </parent>
     <artifactId>project-archetype</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>maven-archetype</packaging>
 
     <!-- Project Information -->
