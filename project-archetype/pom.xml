@@ -12,8 +12,14 @@
         <relativePath>../orbisparent</relativePath>
     </parent>
     <artifactId>project-archetype</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>${parent.version}</version>
     <packaging>maven-archetype</packaging>
+
+    <scm>
+        <connection>scm:git:https://github.com/SPalominos/orbisparents.git</connection>
+        <developerConnection>scm:git:https://github.com/SPalominos/orbisparents.git</developerConnection>
+        <url>git@github.com:SPalominos/orbisparents.git</url>
+    </scm>
 
     <!-- Project Information -->
     <name>OrbisGIS project Archetype</name>

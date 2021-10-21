@@ -5,7 +5,7 @@
 [![codecov](https://img.shields.io/codecov/c/github/orbisgis/orbisparents.svg)](https://codecov.io/gh/orbisgis/orbisparents) 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/281e5a0861ac4b029db7b33157cebe99)](https://www.codacy.com/gh/orbisgis/orbisparents?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=orbisgis/orbisparents&amp;utm_campaign=Badge_Grade)
 
-Project holding parent POM for the OrbisGIS project.
+Project holding parent POM and common resources for the OrbisGIS project.
 
 ### Modules
 
