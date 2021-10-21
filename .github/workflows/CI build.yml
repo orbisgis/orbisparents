@@ -3,10 +3,11 @@ name: CI build
 on:
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
-    name: Build
+    name: Build Check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
