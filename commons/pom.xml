@@ -12,7 +12,7 @@
         <relativePath>../orbisparent</relativePath>
     </parent>
     <artifactId>commons</artifactId>
-    <version>${revision}</version>
+    <version>${parent.version}</version>
     <packaging>bundle</packaging>
 
     <!-- Project Information -->
