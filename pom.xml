@@ -7,11 +7,28 @@
     <artifactId>orbisparents</artifactId>
     <name>OrbisGIS Parents</name>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <version>1.0.3-SNAPSHOT</version>
 
     <modules>
         <module>orbisparent</module>
         <module>project-archetype</module>
         <module>commons</module>
     </modules>
+
+    <scm>
+        <connection>scm:git:https://github.com/SPalominos/orbisparents.git</connection>
+        <developerConnection>scm:git:https://github.com/SPalominos/orbisparents.git</developerConnection>
+        <url>git@github.com:SPalominos/orbisparents.git</url>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 </project>

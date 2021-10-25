@@ -254,6 +254,17 @@
         </dependencies>
     </dependencyManagement>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
     <!-- Build Settings -->
     <build>
         <!-- Extension for Maven archetype -->
@@ -382,18 +393,6 @@
                 <!-- Reporting -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>${maven-site-version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.apache.maven.wagon</groupId>
-                            <artifactId>wagon-webdav-jackrabbit</artifactId>
-                            <version>${wagon-webdav-jackrabbit-version}</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
                     <version>${maven-project-info-reports-version}</version>
                 </plugin>
@@ -456,6 +455,20 @@
                         <tagNameFormat>v@{project.version}</tagNameFormat>
                     </configuration>
                 </plugin>
+                <!-- Sign -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -479,7 +492,7 @@
                             <goal>display-dependency-updates</goal>
                             <goal>display-plugin-updates</goal>
                         </goals>
-                        <phase>verify</phase>
+                        <phase>validate</phase>
                     </execution>
                 </executions>
                 <inherited>false</inherited>
@@ -496,22 +509,6 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>deploy</id>
-            <distributionManagement>
-                <snapshotRepository>
-                    <id>sonatype-nexus-snapshots</id>
-                    <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
-                <repository>
-                    <id>sonatype-nexus-staging</id>
-                    <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
-        </profile>
-    </profiles>
 
     <reporting>
         <plugins>
