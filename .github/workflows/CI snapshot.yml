@@ -3,7 +3,7 @@ name: CI snapshot
 on:
   workflow_run:
     workflows: ["CI build"]
-    branches: [main]
+    branches: [ master ]
     types:
       - completed
   workflow_dispatch:
