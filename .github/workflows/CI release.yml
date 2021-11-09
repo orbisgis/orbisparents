@@ -2,6 +2,10 @@ name: CI release
 
 on:
   workflow_dispatch:
+    inputs:
+      next-version:
+        required: false
+        description: "Next version"
 
 jobs:
   build:

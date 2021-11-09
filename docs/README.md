@@ -5,14 +5,30 @@
 [![codecov](https://img.shields.io/codecov/c/github/orbisgis/orbisparents.svg)](https://codecov.io/gh/orbisgis/orbisparents) 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/281e5a0861ac4b029db7b33157cebe99)](https://www.codacy.com/gh/orbisgis/orbisparents?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=orbisgis/orbisparents&amp;utm_campaign=Badge_Grade)
 
-Project holding parent POM and common resources for the OrbisGIS project.
+This project is the root of all the OrbisGIS projects.
+It contains a parent pom with the dependency and plugin management and a basic `site.xml` file used for the reporting
+site generation.
+
+### Building
+
+To build with plugin/dependency version check, use the maven goal
+`versions:display-plugin-updates versions:display-dependency-updates`.
+To generate the reporting site, use the maven goal `site:effective-site site site:deploy`.
+
+### Versions
+
+The version number should follow this pattern : `Major`.`Minor`.`Revision[-Qualifier]`
+
+- `Revision` is changed after each dependency/plugin/information update/addition.
+- `Minor` is changed after each dependency/plugin/information removal or replacement.
+- `Major` is changed after each structural change.
+- Optional `Qualifier` which can take one of these values :
+    - `SNAPSHOT` for in-dev version.
+    - `RC-X` for release candidate version. All of its dependencies ou plugin should be at the RC or Release state.
+    - Nothing for release version. All of its dependencies ou plugin should be at the Release state.
+
 
 ### Modules
-
-##### OrbisParent
-
-This parent POM is the base of the different OrbisGIS projects.
-
 ##### Project-Archetype
 
 This artifact make easier the creation of a preconfigured project compatible with the OrbisGIS platform.
