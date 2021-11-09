@@ -385,7 +385,7 @@
                     <version>${version-maven}</version>
                     <configuration>
                         <rulesUri>
-                            https://raw.githubusercontent.com/orbisgis/orbisgis-parents/master/orbisparent/maven-version-rules.xml
+                            https://raw.githubusercontent.com/orbisgis/orbisgis-parents/master/maven-version-rules.xml
                         </rulesUri>
                     </configuration>
                 </plugin>
