@@ -12,6 +12,11 @@
     <name>OrbisGIS Parent</name>
     <description>Parent pom for the dependency and plugin management and for the nexus deployment</description>
 
+    <modules>
+        <module>commons</module>
+        <module>project-archetype</module>
+    </modules>
+
     <organization>
         <name>CNRS</name>
         <url>http://www.orbisgis.org</url>
@@ -452,7 +457,6 @@
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
-                        <preparationGoals>clean verify</preparationGoals>
                     </configuration>
                 </plugin>
                 <!-- Sign -->
