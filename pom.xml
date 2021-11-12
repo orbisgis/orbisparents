@@ -60,7 +60,7 @@
         <commons-compress-version>1.20</commons-compress-version>
         <commons-io-version>2.7</commons-io-version>
         <groovy-version>3.0.7</groovy-version>
-        <h2-version>1.4.201-RC2</h2-version>
+        <h2-version>2.0.201-SNAPSHOT</h2-version>
         <jackson-core-version>2.11.0</jackson-core-version>
         <jts-version>1.16.1</jts-version>
         <junit-version>5.7.0-M1</junit-version>
@@ -136,7 +136,7 @@
                 <version>${commons-io-version}</version>
             </dependency>
             <dependency>
-                <groupId>com.h2database</groupId>
+                <groupId>org.orbisgis</groupId>
                 <artifactId>h2</artifactId>
                 <version>${h2-version}</version>
             </dependency>
@@ -519,13 +519,22 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
             </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-            </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>deploy</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <!-- reporting -->
     <reporting>
