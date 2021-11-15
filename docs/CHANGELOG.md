@@ -1,6 +1,5 @@
-# Changelog for v1.0.3
+# Changelog for v1.0.4
 
-+ Add the `commons` module containing utilities and annotation which aim to be used in all the OrbisGIS projects.
-+ Add `CONTRIBUTING.md` and `HEADER.md` files.
-+ Cover `commons` module with tests.
-+ Add `appendValue(Object)` methods to `ICustomPrinter`.
++ Move `maven-gpg-plugin` into the profile `deploy` in order to be able to sign only releases.
++ Update `JTS` version to `1.18.2`
++ Add `maven-resources-plugin` version
