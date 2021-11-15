@@ -10,7 +10,7 @@
 
     <!-- Project Information -->
     <name>OrbisGIS Parent</name>
-    <description>Parent pom for the dependency and plugin management and for the nexus deployment</description>
+    <description>Parent pom for the dependency and plugin management and for the deployment</description>
 
     <modules>
         <module>commons</module>
@@ -111,6 +111,7 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
             <snapshots>
                 <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
             </snapshots>
         </pluginRepository>
         <pluginRepository>

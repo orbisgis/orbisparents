@@ -52,8 +52,10 @@ jobs:
             --batch-mode \
             -P deploy \
             release:prepare release:perform \
-            -Dusername=$GITHUB_ACTOR -Dpassword=$GITHUB_TOKEN -DtagNameFormat=v@{project.version}
+            -Dusername=$GITHUB_ACTOR -Dpassword=$GITHUB_TOKEN -DtagNameFormat=v@{project.version} \
+            ${VERSION:+-DreleaseVersion VERSION}
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_PASSWORD }}
+          VERSION: $next-version
