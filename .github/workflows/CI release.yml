@@ -54,7 +54,7 @@ jobs:
             --batch-mode \
             -P deploy \
             release:prepare release:perform \
-            -Dusername=$GITHUB_ACTOR -Dpassword=$GITHUB_TOKEN -DtagNameFormat=v@{project.version} \
+            -Dusername=$GITHUB_ACTOR -Dpassword=$GITHUB_TOKEN \
             ${VERSION:+-DreleaseVersion VERSION}
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
@@ -62,13 +62,34 @@ jobs:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_PASSWORD }}
           VERSION: $next-version
 
+      # Make the github release from the last created tag. Write in its body the content of the changelog file.
+      - name: Make github release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: $(git describe --tags `git rev-list --tags --max-count=1`)
+          release_name: $(git describe --tags `git rev-list --tags --max-count=1`)
+          body: |
+            ${{cat docs/CHANGELOG.md}}
+          draft: false
+          prerelease: false
+
+      # Clear the changelog file and add its header
+      - name: Clear changelog
+        run: |
+          > docs/CHANGELOG.md
+          "# Changelog for $version" > docs/CHANGELOG.md
+          git commit -a -m "Empty changelog."
+          git push origin main
+        env:
+          version: ${{v$( mvn help:evaluate -Dexpression=project.version  | sed -n -e '/^\[.*\]/ !{ /^[0-9]/ { p; q } }' | cut -d- -f1)}}
+
 
       # If the version change is a major or minor, create a branch from the previous tag for future revisions.
       - name: Branch fork
         run: |
-          TAGS=$(git describe --tags `git rev-list --tags --max-count=1`)
-          TAGS="$TAGS
-          v1.0.2"
+          TAGS=$(git describe --tags `git rev-list --tags --max-count=2`)
           readarray -t SPLIT <<<"$TAGS"
           SPLIT0=(${SPLIT[0]//./ })
           SPLIT1=(${SPLIT[1]//./ })
