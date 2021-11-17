@@ -40,8 +40,6 @@ jobs:
           cat <(echo -e "${{ secrets.OSSRH_GPG_SECRET_KEY }}") | gpg --batch --import
           gpg --list-secret-keys --keyid-format LONG
 
-      # Check if the version
-
       # Create the release :
       #   - move from Snapshot version to Release
       #   - commit and tag release
@@ -54,13 +52,16 @@ jobs:
             --batch-mode \
             -P deploy \
             release:prepare release:perform \
-            -Dusername=$GITHUB_ACTOR -Dpassword=$GITHUB_TOKEN \
-            ${VERSION:+-DreleaseVersion VERSION}
+            -Dusername=$GITHUB_ACTOR -Dpassword=$GITHUB_TOKEN
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_PASSWORD }}
-          VERSION: $next-version
+          VERSION: ${{ inputs.next-version }}
+
+      # Export the last git tag into env.
+      - name: Export env values
+        run: echo "GIT_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)" >> $GITHUB_ENV
 
       # Make the github release from the last created tag. Write in its body the content of the changelog file.
       - name: Make github release
@@ -68,8 +69,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: $(git describe --tags `git rev-list --tags --max-count=1`)
-          release_name: $(git describe --tags `git rev-list --tags --max-count=1`)
+          tag_name: ${{ env.GIT_TAG }}
+          release_name: ${{ env.GIT_TAG }}
           body_path: docs/CHANGELOG.md
           draft: false
           prerelease: false
@@ -78,7 +79,7 @@ jobs:
       - name: Clear changelog
         run: |
           > docs/CHANGELOG.md
-          "# Changelog for v$( mvn help:evaluate -Dexpression=project.version  | sed -n -e '/^\[.*\]/ !{ /^[0-9]/ { p; q } }' | cut -d- -f1) > docs/CHANGELOG.md
+          "# Changelog for v$( mvn help:evaluate -Dexpression=project.version  | sed -n -e '/^\[.*\]/ !{ /^[0-9]/ { p; q } }' | cut -d- -f1)" > docs/CHANGELOG.md
           git commit -a -m "Empty changelog."
           git push origin main
 
