@@ -78,8 +78,7 @@ jobs:
       # Clear the changelog file and add its header
       - name: Clear changelog
         run: |
-          > docs/CHANGELOG.md
-          "# Changelog for v$( mvn help:evaluate -Dexpression=project.version  | sed -n -e '/^\[.*\]/ !{ /^[0-9]/ { p; q } }' | cut -d- -f1)" > docs/CHANGELOG.md
+          echo "# Changelog for v$( mvn help:evaluate -Dexpression=project.version  | sed -n -e '/^\[.*\]/ !{ /^[0-9]/ { p; q } }' | cut -d- -f1)" > docs/CHANGELOG.md
           git commit -a -m "Empty changelog."
           git push origin main
 

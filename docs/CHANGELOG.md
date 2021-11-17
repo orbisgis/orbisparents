@@ -5,4 +5,4 @@
 + Add `maven-resources-plugin` version
 + Change `oss-sonatype` repository `updatePolicy` to `always`
 + Change main branch from `master` to `main`
-+ Update `release` workflow to be able to specify next version 
++ Update `release` workflow to be able to specify next version and to make the github release publish automatic
