@@ -70,8 +70,7 @@ jobs:
         with:
           tag_name: $(git describe --tags `git rev-list --tags --max-count=1`)
           release_name: $(git describe --tags `git rev-list --tags --max-count=1`)
-          body: |
-            ${{cat docs/CHANGELOG.md}}
+          body_path: docs/CHANGELOG.md
           draft: false
           prerelease: false
 
@@ -79,11 +78,9 @@ jobs:
       - name: Clear changelog
         run: |
           > docs/CHANGELOG.md
-          "# Changelog for $version" > docs/CHANGELOG.md
+          "# Changelog for v$( mvn help:evaluate -Dexpression=project.version  | sed -n -e '/^\[.*\]/ !{ /^[0-9]/ { p; q } }' | cut -d- -f1) > docs/CHANGELOG.md
           git commit -a -m "Empty changelog."
           git push origin main
-        env:
-          version: ${{v$( mvn help:evaluate -Dexpression=project.version  | sed -n -e '/^\[.*\]/ !{ /^[0-9]/ { p; q } }' | cut -d- -f1)}}
 
 
       # If the version change is a major or minor, create a branch from the previous tag for future revisions.
