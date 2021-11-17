@@ -40,6 +40,8 @@ jobs:
           cat <(echo -e "${{ secrets.OSSRH_GPG_SECRET_KEY }}") | gpg --batch --import
           gpg --list-secret-keys --keyid-format LONG
 
+      # Check if the version
+
       # Create the release :
       #   - move from Snapshot version to Release
       #   - commit and tag release
@@ -59,3 +61,22 @@ jobs:
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_PASSWORD }}
           VERSION: $next-version
+
+
+      # If the version change is a major or minor, create a branch from the previous tag for future revisions.
+      - name: Branch fork
+        run: |
+          TAGS=$(git describe --tags `git rev-list --tags --max-count=1`)
+          TAGS="$TAGS
+          v1.0.2"
+          readarray -t SPLIT <<<"$TAGS"
+          SPLIT0=(${SPLIT[0]//./ })
+          SPLIT1=(${SPLIT[1]//./ })
+          if [ "${SPLIT0[0]}" = "${SPLIT1[0]}" ] && [ "${SPLIT0[1]}" = "${SPLIT1[1]}" ]; then
+            echo "Revision change"
+          else
+            echo "Minor or Major change"
+            BRANCH="${SPLIT0[1]}.${SPLIT1[1]}.X"
+            git checkout -b "$BRANCH" "${SPLIT[1]}"
+            git push -u origin "$BRANCH"
+          fi
