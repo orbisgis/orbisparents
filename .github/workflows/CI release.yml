@@ -3,9 +3,9 @@ name: CI release
 on:
   workflow_dispatch:
     inputs:
-      next-version:
+      nextVersion:
         required: false
-        description: "Next version"
+        description: "Next version (optional)"
 
 jobs:
   build:
@@ -47,17 +47,17 @@ jobs:
       #   - upload release to maven repo
       - name: Release
         run: |
+          VERSION=${{ github.event.inputs.nextVersion }}
           mvn \
             --no-transfer-progress \
             --batch-mode \
             -P deploy \
             release:prepare release:perform \
-            -Dusername=$GITHUB_ACTOR -Dpassword=$GITHUB_TOKEN
+            -Dusername=$GITHUB_ACTOR -Dpassword=$GITHUB_TOKEN ${VERSION:+"-DdevelopmentVersion=$VERSION"}
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_PASSWORD }}
-          VERSION: ${{ inputs.next-version }}
 
       # Export the last git tag into env.
       - name: Export env values
@@ -86,15 +86,15 @@ jobs:
       # If the version change is a major or minor, create a branch from the previous tag for future revisions.
       - name: Branch fork
         run: |
-          TAGS=$(git describe --tags `git rev-list --tags --max-count=2`)
-          readarray -t SPLIT <<<"$TAGS"
-          SPLIT0=(${SPLIT[0]//./ })
-          SPLIT1=(${SPLIT[1]//./ })
+          GIT_TAG="${GIT_TAG:1}"
+          CUR_TAG="$( mvn help:evaluate -Dexpression=project.version  | sed -n -e '/^\[.*\]/ !{ /^[0-9]/ { p; q } }' | cut -d- -f1)"
+          SPLIT0=(${GIT_TAG//./ })
+          SPLIT1=(${CUR_TAG//./ })
           if [ "${SPLIT0[0]}" = "${SPLIT1[0]}" ] && [ "${SPLIT0[1]}" = "${SPLIT1[1]}" ]; then
             echo "Revision change"
           else
             echo "Minor or Major change"
-            BRANCH="${SPLIT0[1]}.${SPLIT1[1]}.X"
-            git checkout -b "$BRANCH" "${SPLIT[1]}"
+            BRANCH="${SPLIT0[0]}.${SPLIT0[1]}.X"
+            git checkout -b "$BRANCH" "v${GIT_TAG}"
             git push -u origin "$BRANCH"
           fi
