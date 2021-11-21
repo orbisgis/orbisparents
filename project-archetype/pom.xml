@@ -12,41 +12,11 @@
     <version>1.1.0-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
-    <scm>
-        <connection>scm:git:https://github.com/OrbisGIS/orbisparents.git</connection>
-        <developerConnection>scm:git:https://github.com/OrbisGIS/orbisparents.git</developerConnection>
-        <url>git@github.com:OrbisGIS/orbisparents.git</url>
-      <tag>HEAD</tag>
-  </scm>
-
     <!-- Project Information -->
     <name>OrbisGIS project Archetype</name>
-    <description>Basic Maven archetype for the creation of a simple project able to integrate the OrbisGIS platform.
+    <description>
+        Basic Maven archetype for the creation of a simple project able to integrate the OrbisGIS platform.
     </description>
-
-    <!-- Dependencies -->
-    <repositories>
-        <repository>
-            <id>orbisgis-release</id>
-            <url>http://nexus-ng.orbisgis.org/repository/orbisgis-release</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-        <repository>
-            <id>orbisgis-snapshot</id>
-            <url>http://nexus-ng.orbisgis.org/repository/orbisgis-snapshot</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </repository>
-    </repositories>
 
     <!-- Build -->
     <build>

@@ -49,7 +49,7 @@ jobs:
         run: |
           VERSION=${{ github.event.inputs.nextVersion }}
           mvn \
-            --no-transfer-progress \
+            -ntp \
             --batch-mode \
             -P deploy \
             release:prepare release:perform \
