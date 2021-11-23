@@ -36,11 +36,12 @@ jobs:
         run: mvn -ntp clean validate compile test
 
       # Check changelog update
-      - uses: dorny/paths-filter@v2
+      - name: Check changelog update
+        uses: dorny/paths-filter@v2
         id: changes
         with:
           filters: |
             changelog:
               - 'docs/CHANGELOG.md'
-        if: steps.changes.outputs.changelog == 'false'
+      - if: steps.changes.outputs.changelog == 'false'
         run: exit 1
