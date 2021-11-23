@@ -43,5 +43,7 @@ jobs:
           filters: |
             changelog:
               - 'docs/CHANGELOG.md'
-      - if: steps.changes.outputs.changelog == 'false'
+        if: github.event_name != 'workflow_dispatch'
+
+      - if: steps.changes.outputs.changelog == 'false' && github.event_name != 'workflow_dispatch'
         run: exit 1
