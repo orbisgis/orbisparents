@@ -29,7 +29,21 @@ jobs:
 
       # Build the project using
       #   - clean : clean up the workspace
-      #   - verify : perform different check like the dependency and plugin version update
-      #   - package : bundle the project into pom or jar.
+      #   - validate : perform different check like the dependency and plugin version update
+      #   - compile : compile the source code.
+      #   - test : Perform the tests.
       - name: Build
         run: mvn -ntp clean validate compile test
+
+      # Check changelog update
+      - name: Check changelog update
+        uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            changelog:
+              - 'docs/CHANGELOG.md'
+        if: github.event_name != 'workflow_dispatch'
+
+      - if: steps.changes.outputs.changelog == 'false' && github.event_name != 'workflow_dispatch'
+        run: exit 1
