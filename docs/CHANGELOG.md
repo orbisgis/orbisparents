@@ -1,6 +1,7 @@
 # Changelog for v1.1.0
 
 + Set `updatePolicy` of `oss-sonatype` snapshot to `true`
++ `CI build` workflow now check the `docs/CHANGELOG.md` update.
 
 ## Sdk upgrade
 + Switch from java `8` to java `11`
