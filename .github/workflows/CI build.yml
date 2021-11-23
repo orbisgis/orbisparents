@@ -36,10 +36,11 @@ jobs:
         run: mvn -ntp clean validate compile test
 
       # Check changelog update
-      - name: Check changelog update
-        run: |
-          if [ -z "$(git diff docs/CHANGELOG.md)" ]; then
-            exit 1
-          else
-            exit 0
-          fi
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            changelog:
+              - 'docs/CHANGELOG.md'
+        if: steps.changes.outputs.changelog == 'false'
+        run: exit 1
