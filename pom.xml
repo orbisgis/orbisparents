@@ -21,7 +21,9 @@
         <name>CNRS</name>
         <url>http://www.orbisgis.org</url>
     </organization>
+
     <url>http://github.com/orbisgis/orbisgis-parents</url>
+
     <licenses>
         <license>
             <name>GNU Lesser General Public License (LGPLV3+)</name>
@@ -41,11 +43,16 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/OrbisGIS/orbisparents.git</connection>
-        <developerConnection>scm:git:https://github.com/OrbisGIS/orbisparents.git</developerConnection>
-        <url>git@github.com:OrbisGIS/orbisparents.git</url>
+        <connection>scm:git:https://github.com/orbisgis/orbisparents.git</connection>
+        <developerConnection>scm:git:https://github.com/orbisgis/orbisparents.git</developerConnection>
+        <url>git@github.com:orbisgis/orbisparents.git</url>
         <tag>HEAD</tag>
     </scm>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/orbisgis/orbisparents/issues</url>
+    </issueManagement>
 
     <!-- Properties -->
     <properties>
@@ -60,10 +67,10 @@
         <commons-compress-version>1.21</commons-compress-version>
         <commons-io-version>2.11.0</commons-io-version>
         <groovy-version>3.0.9</groovy-version>
-        <h2-version>2.0.201</h2-version>
+        <h2-version>2.0.202</h2-version>
         <jackson-core-version>2.13.0</jackson-core-version>
         <jts-version>1.18.2</jts-version>
-        <junit-version>5.8.1</junit-version>
+        <junit-version>5.8.2</junit-version>
         <osgi-compendium-version>5.0.0</osgi-compendium-version>
         <osgi-core-version>6.0.0</osgi-core-version>
         <osgi-enterprise-version>5.0.0</osgi-enterprise-version>
@@ -108,12 +115,26 @@
     <repositories>
         <repository>
             <id>oss-sonatype</id>
-            <name>oss-sonatype</name>
+            <name>oss-sonatype-snapshot</name>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
             </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>orbisgis-release</id>
+            <name>oss-sonatype-release</name>
+            <url>https://oss.sonatype.org/content/repositories/releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
         </repository>
     </repositories>
     <pluginRepositories>
@@ -420,13 +441,13 @@
                     <version>${jacoco-maven-version}</version>
                     <executions>
                         <execution>
+                            <id>initialize</id>
                             <goals>
                                 <goal>prepare-agent</goal>
                             </goals>
                         </execution>
                         <execution>
-                            <id>report</id>
-                            <phase>test</phase>
+                            <id>test</id>
                             <goals>
                                 <goal>report</goal>
                             </goals>
@@ -438,6 +459,10 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>${maven-javadoc-version}</version>
+                    <configuration>
+                        <doclint>all,-missing</doclint>
+                        <quiet>true</quiet>
+                    </configuration>
                 </plugin>
                 <!-- Execution -->
                 <plugin>
@@ -548,6 +573,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
