@@ -5,7 +5,7 @@
     <!-- Maven Coordinates -->
     <groupId>org.orbisgis</groupId>
     <artifactId>orbisparent</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <!-- Project Information -->
@@ -46,7 +46,7 @@
         <connection>scm:git:https://github.com/orbisgis/orbisparents.git</connection>
         <developerConnection>scm:git:https://github.com/orbisgis/orbisparents.git</developerConnection>
         <url>git@github.com:orbisgis/orbisparents.git</url>
-        <tag>v1.1.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
