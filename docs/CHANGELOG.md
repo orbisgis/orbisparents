@@ -3,6 +3,7 @@
 + Set `updatePolicy` of `oss-sonatype` snapshot to `true`
 + `CI build` workflow now check the `docs/CHANGELOG.md` update.
 + Improve base configuration of plugins and build.
++ Add `fork` option to compiler.
 
 ### Sdk upgrade
 + Switch from java `8` to java `11`
