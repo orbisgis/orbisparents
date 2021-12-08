@@ -80,7 +80,7 @@
         <poly2tri-version>0.1.2</poly2tri-version>
         <postgis-jdbc-version>2021.1.0</postgis-jdbc-version>
         <slf4j-version>1.7.32</slf4j-version>
-        <smile-version>2.6.0</smile-version>
+        <smile-version>2.5.3</smile-version>
         <wagon-webdav-jackrabbit-version>3.3.4</wagon-webdav-jackrabbit-version>
         <xstream-version>1.4.18</xstream-version>
 
