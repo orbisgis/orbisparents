@@ -5,3 +5,4 @@
 + Update H2 database `2.0.200` -> `2.0.204`
 + Compile with Eclipse Temurin VM
 + Update commons to 1.2.0-SNAPSHOT
++ Use H2 2.1.209-SNAPSHOT stored on org.orbisgis 
