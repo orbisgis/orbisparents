@@ -67,7 +67,7 @@
         <commons-compress-version>1.21</commons-compress-version>
         <commons-io-version>2.11.0</commons-io-version>
         <groovy-version>3.0.9</groovy-version>
-        <h2-version>2.1.209-SNAPSHOT</h2-version>
+        <h2-version>2.0.206</h2-version>
         <jackson-core-version>2.13.0</jackson-core-version>
         <jts-version>1.18.2</jts-version>
         <junit-version>5.8.2</junit-version>
@@ -169,7 +169,7 @@
                 <version>${commons-io-version}</version>
             </dependency>
             <dependency>
-                <groupId>org.orbisgis</groupId>
+                <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
                 <version>${h2-version}</version>
             </dependency>
