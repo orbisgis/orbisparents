@@ -6,3 +6,4 @@
 + Compile with Eclipse Temurin VM
 + Update commons to 1.2.0-SNAPSHOT
 + Use H2 2.1.209-SNAPSHOT stored on org.orbisgis 
++ Update to the official release H2 2.0.206
