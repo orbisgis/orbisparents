@@ -20,8 +20,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # Setup the jdk using version 11 of temurin
-      - name: Setup java 11 using temurin
+      # Setup the jdk using version 11 of Adoptium Temurin
+      - name: Setup java 11 using Adoptium Temurin
         uses: actions/setup-java@v2
         with:
           distribution: 'temurin'
@@ -41,7 +41,7 @@ jobs:
         id: changes
         with:
           filters: |
-            changelog:
+            changelog: 
               - 'docs/CHANGELOG.md'
             sources:
               - '**/pom.xml'

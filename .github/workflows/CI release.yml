@@ -16,8 +16,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # Setup the jdk using version 11 of temurin
-      - name: Java setup
+      # Setup the jdk using version 11 of Adoptium Temurin
+      - name: Setup java 11 using Adoptium Temurin
         uses: actions/setup-java@v2
         with:
           distribution: 'temurin'
@@ -101,5 +101,7 @@ jobs:
             echo "Minor or Major change"
             BRANCH="${SPLIT0[0]}.${SPLIT0[1]}.X"
             git checkout -b "$BRANCH" "v${GIT_TAG}"
+            mvn versions:set -DnewVersion="${SPLIT0[0]}.${SPLIT0[1]}.$((${SPLIT0[2]}+1))-SNAPSHOT"
+            git commit -a -m "Set next version."
             git push -u origin "$BRANCH"
           fi
