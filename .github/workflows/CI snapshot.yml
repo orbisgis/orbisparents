@@ -2,10 +2,10 @@ name: CI snapshot
 
 on:
   push:
-    branches: [ main ]
+    branches: [ '**' ]
   workflow_run:
     workflows: ["CI release"]
-    branches: [ main ]
+    branches: [ '**' ]
     types:
       - completed
   workflow_dispatch:
@@ -19,8 +19,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # Setup the jdk using version 11 of temurin
-      - name: Java setup
+      # Setup the jdk using version 11 of Adoptium Temurin
+      - name: Setup java 11 using Adoptium Temurin
         uses: actions/setup-java@v2
         with:
           distribution: 'temurin'
